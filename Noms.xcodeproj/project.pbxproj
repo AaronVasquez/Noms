@@ -14,12 +14,8 @@
 		93C3C1FA153233EF004BEF32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C1F9153233EF004BEF32 /* main.m */; };
 		93C3C1FE153233EF004BEF32 /* NOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */; };
 		93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */; };
-		93C3C204153233EF004BEF32 /* NOMFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C203153233EF004BEF32 /* NOMFirstViewController.m */; };
-		93C3C206153233EF004BEF32 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C205153233EF004BEF32 /* first.png */; };
-		93C3C208153233EF004BEF32 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C207153233EF004BEF32 /* first@2x.png */; };
 		93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */; };
-		93C3C20D153233EF004BEF32 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C20C153233EF004BEF32 /* second.png */; };
-		93C3C20F153233EF004BEF32 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C20E153233EF004BEF32 /* second@2x.png */; };
+		93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,21 +23,17 @@
 		93C3C1ED153233EF004BEF32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		93C3C1EF153233EF004BEF32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93C3C1F1153233EF004BEF32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		93C3C1F5153233EF004BEF32 /* Noms-Info.plist */ = {isa = PBXFileReference; path = "Noms-Info.plist"; sourceTree = "<group>"; };
+		93C3C1F5153233EF004BEF32 /* Noms-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Noms-Info.plist"; sourceTree = "<group>"; };
 		93C3C1F7153233EF004BEF32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93C3C1F9153233EF004BEF32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93C3C1FB153233EF004BEF32 /* Noms-Prefix.pch */ = {isa = PBXFileReference; path = "Noms-Prefix.pch"; sourceTree = "<group>"; };
-		93C3C1FC153233EF004BEF32 /* NOMAppDelegate.h */ = {isa = PBXFileReference; path = NOMAppDelegate.h; sourceTree = "<group>"; };
+		93C3C1FB153233EF004BEF32 /* Noms-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Noms-Prefix.pch"; sourceTree = "<group>"; };
+		93C3C1FC153233EF004BEF32 /* NOMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOMAppDelegate.h; sourceTree = "<group>"; };
 		93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMAppDelegate.m; sourceTree = "<group>"; };
 		93C3C200153233EF004BEF32 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		93C3C202153233EF004BEF32 /* NOMFirstViewController.h */ = {isa = PBXFileReference; path = NOMFirstViewController.h; sourceTree = "<group>"; };
-		93C3C203153233EF004BEF32 /* NOMFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMFirstViewController.m; sourceTree = "<group>"; };
-		93C3C205153233EF004BEF32 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		93C3C207153233EF004BEF32 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		93C3C209153233EF004BEF32 /* NOMSecondViewController.h */ = {isa = PBXFileReference; path = NOMSecondViewController.h; sourceTree = "<group>"; };
+		93C3C209153233EF004BEF32 /* NOMSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOMSecondViewController.h; sourceTree = "<group>"; };
 		93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMSecondViewController.m; sourceTree = "<group>"; };
-		93C3C20C153233EF004BEF32 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		93C3C20E153233EF004BEF32 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		93C3C21B15323FD3004BEF32 /* NOMRestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurantsViewController.h; sourceTree = "<group>"; };
+		93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurantsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,17 +80,13 @@
 		93C3C1F3153233EF004BEF32 /* Noms */ = {
 			isa = PBXGroup;
 			children = (
+				93C3C21A15323F7D004BEF32 /* DataModels */,
+				93C3C21915323F69004BEF32 /* ViewControllers */,
 				93C3C1FC153233EF004BEF32 /* NOMAppDelegate.h */,
 				93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */,
 				93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */,
-				93C3C202153233EF004BEF32 /* NOMFirstViewController.h */,
-				93C3C203153233EF004BEF32 /* NOMFirstViewController.m */,
-				93C3C205153233EF004BEF32 /* first.png */,
-				93C3C207153233EF004BEF32 /* first@2x.png */,
 				93C3C209153233EF004BEF32 /* NOMSecondViewController.h */,
 				93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */,
-				93C3C20C153233EF004BEF32 /* second.png */,
-				93C3C20E153233EF004BEF32 /* second@2x.png */,
 				93C3C1F4153233EF004BEF32 /* Supporting Files */,
 			);
 			path = Noms;
@@ -113,6 +101,22 @@
 				93C3C1FB153233EF004BEF32 /* Noms-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93C3C21915323F69004BEF32 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				93C3C21B15323FD3004BEF32 /* NOMRestaurantsViewController.h */,
+				93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		93C3C21A15323F7D004BEF32 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +172,6 @@
 			files = (
 				93C3C1F8153233EF004BEF32 /* InfoPlist.strings in Resources */,
 				93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */,
-				93C3C206153233EF004BEF32 /* first.png in Resources */,
-				93C3C208153233EF004BEF32 /* first@2x.png in Resources */,
-				93C3C20D153233EF004BEF32 /* second.png in Resources */,
-				93C3C20F153233EF004BEF32 /* second@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +184,8 @@
 			files = (
 				93C3C1FA153233EF004BEF32 /* main.m in Sources */,
 				93C3C1FE153233EF004BEF32 /* NOMAppDelegate.m in Sources */,
-				93C3C204153233EF004BEF32 /* NOMFirstViewController.m in Sources */,
 				93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */,
+				93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
