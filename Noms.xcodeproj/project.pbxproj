@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93218F51153AAF3B00E96DCC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93218F50153AAF3B00E96DCC /* CoreLocation.framework */; };
+		93218F58153ABDD400E96DCC /* NOMFindRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93218F57153ABDD400E96DCC /* NOMFindRestaurantsViewController.m */; };
 		93C3C1EE153233EF004BEF32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C3C1ED153233EF004BEF32 /* UIKit.framework */; };
 		93C3C1F0153233EF004BEF32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C3C1EF153233EF004BEF32 /* Foundation.framework */; };
 		93C3C1F2153233EF004BEF32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C3C1F1153233EF004BEF32 /* CoreGraphics.framework */; };
@@ -16,9 +18,13 @@
 		93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */; };
 		93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */; };
 		93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */; };
+		93C3C220153248DC004BEF32 /* NOMRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21F153248DC004BEF32 /* NOMRestaurants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93218F50153AAF3B00E96DCC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		93218F56153ABDD400E96DCC /* NOMFindRestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMFindRestaurantsViewController.h; sourceTree = "<group>"; };
+		93218F57153ABDD400E96DCC /* NOMFindRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMFindRestaurantsViewController.m; sourceTree = "<group>"; };
 		93C3C1E9153233EF004BEF32 /* Noms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C3C1ED153233EF004BEF32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		93C3C1EF153233EF004BEF32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,6 +40,8 @@
 		93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMSecondViewController.m; sourceTree = "<group>"; };
 		93C3C21B15323FD3004BEF32 /* NOMRestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurantsViewController.h; sourceTree = "<group>"; };
 		93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurantsViewController.m; sourceTree = "<group>"; };
+		93C3C21E153248DC004BEF32 /* NOMRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurants.h; sourceTree = "<group>"; };
+		93C3C21F153248DC004BEF32 /* NOMRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93218F51153AAF3B00E96DCC /* CoreLocation.framework in Frameworks */,
 				93C3C1EE153233EF004BEF32 /* UIKit.framework in Frameworks */,
 				93C3C1F0153233EF004BEF32 /* Foundation.framework in Frameworks */,
 				93C3C1F2153233EF004BEF32 /* CoreGraphics.framework in Frameworks */,
@@ -70,6 +79,7 @@
 		93C3C1EC153233EF004BEF32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93218F50153AAF3B00E96DCC /* CoreLocation.framework */,
 				93C3C1ED153233EF004BEF32 /* UIKit.framework */,
 				93C3C1EF153233EF004BEF32 /* Foundation.framework */,
 				93C3C1F1153233EF004BEF32 /* CoreGraphics.framework */,
@@ -106,6 +116,8 @@
 		93C3C21915323F69004BEF32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93218F56153ABDD400E96DCC /* NOMFindRestaurantsViewController.h */,
+				93218F57153ABDD400E96DCC /* NOMFindRestaurantsViewController.m */,
 				93C3C21B15323FD3004BEF32 /* NOMRestaurantsViewController.h */,
 				93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */,
 			);
@@ -115,6 +127,8 @@
 		93C3C21A15323F7D004BEF32 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				93C3C21E153248DC004BEF32 /* NOMRestaurants.h */,
+				93C3C21F153248DC004BEF32 /* NOMRestaurants.m */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -186,6 +200,8 @@
 				93C3C1FE153233EF004BEF32 /* NOMAppDelegate.m in Sources */,
 				93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */,
 				93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */,
+				93C3C220153248DC004BEF32 /* NOMRestaurants.m in Sources */,
+				93218F58153ABDD400E96DCC /* NOMFindRestaurantsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +313,7 @@
 				93C3C214153233EF004BEF32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
