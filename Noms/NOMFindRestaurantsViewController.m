@@ -13,33 +13,49 @@
 @end
 
 @implementation NOMFindRestaurantsViewController
-@synthesize findRestaurants;
+@synthesize locationCoordinates = _locationCoordinates;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        NSLog(@"whatup yo");
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
-- (void)viewDidUnload
-{
-    [self setFindRestaurants:nil];
+- (void)viewDidUnload {
+    [self setLocationCoordinates:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - CoreLocation Delegate
+
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    [self.locationCoordinates stopUpdatingLocation]; // only want to get location once
+    CLLocationCoordinate2D currCoordinate = newLocation.coordinate;
+    NSLog(@"Latitude: %f", currCoordinate.latitude);
+    NSLog(@"Longitude: %f", currCoordinate.longitude);
+    
+}
+
+#pragma mark - actions
+
+- (IBAction)findRestaurants {
+    self.locationCoordinates.delegate = self;
+    [self.locationCoordinates startUpdatingLocation];
 }
 
 @end

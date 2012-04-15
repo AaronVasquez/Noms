@@ -6,9 +6,15 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+// this is a temporary controller & view to get locations, will be replaced when I implement new features
+// pressing the tab bar button will serve the same function as this button
 
-@interface NOMFindRestaurantsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *findRestaurants;
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface NOMFindRestaurantsViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (strong, nonatomic) IBOutlet CLLocationManager *locationCoordinates;
+- (IBAction)findRestaurants;
 
 @end

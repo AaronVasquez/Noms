@@ -16,7 +16,6 @@
 		93C3C1FA153233EF004BEF32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C1F9153233EF004BEF32 /* main.m */; };
 		93C3C1FE153233EF004BEF32 /* NOMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */; };
 		93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */; };
-		93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */; };
 		93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */; };
 		93C3C220153248DC004BEF32 /* NOMRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21F153248DC004BEF32 /* NOMRestaurants.m */; };
 /* End PBXBuildFile section */
@@ -36,8 +35,6 @@
 		93C3C1FC153233EF004BEF32 /* NOMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOMAppDelegate.h; sourceTree = "<group>"; };
 		93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMAppDelegate.m; sourceTree = "<group>"; };
 		93C3C200153233EF004BEF32 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		93C3C209153233EF004BEF32 /* NOMSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOMSecondViewController.h; sourceTree = "<group>"; };
-		93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NOMSecondViewController.m; sourceTree = "<group>"; };
 		93C3C21B15323FD3004BEF32 /* NOMRestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurantsViewController.h; sourceTree = "<group>"; };
 		93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurantsViewController.m; sourceTree = "<group>"; };
 		93C3C21E153248DC004BEF32 /* NOMRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurants.h; sourceTree = "<group>"; };
@@ -95,8 +92,6 @@
 				93C3C1FC153233EF004BEF32 /* NOMAppDelegate.h */,
 				93C3C1FD153233EF004BEF32 /* NOMAppDelegate.m */,
 				93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */,
-				93C3C209153233EF004BEF32 /* NOMSecondViewController.h */,
-				93C3C20A153233EF004BEF32 /* NOMSecondViewController.m */,
 				93C3C1F4153233EF004BEF32 /* Supporting Files */,
 			);
 			path = Noms;
@@ -198,7 +193,6 @@
 			files = (
 				93C3C1FA153233EF004BEF32 /* main.m in Sources */,
 				93C3C1FE153233EF004BEF32 /* NOMAppDelegate.m in Sources */,
-				93C3C20B153233EF004BEF32 /* NOMSecondViewController.m in Sources */,
 				93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */,
 				93C3C220153248DC004BEF32 /* NOMRestaurants.m in Sources */,
 				93218F58153ABDD400E96DCC /* NOMFindRestaurantsViewController.m in Sources */,
