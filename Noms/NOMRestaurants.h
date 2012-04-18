@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface NOMRestaurants : NSObject
+@interface NOMRestaurants : NSObject <NSURLConnectionDelegate>
 
-@property (strong, nonatomic) NSMutableArray *localRestuarants;
+- (NSArray *)getRestaurantsAt: (CLLocation *)location;
 
 @end

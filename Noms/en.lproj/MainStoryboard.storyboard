@@ -21,7 +21,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1275" y="-1030"/>
+            <point key="canvasLocation" x="-1405" y="-1248"/>
         </scene>
         <!--Find Restaurants View Controller - Find-->
         <scene sceneID="AVF-AG-tdQ">
@@ -32,11 +32,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Myi-5M-h1c">
-                                <rect key="frame" x="87" y="165" width="147" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2l-db-W8U">
+                                <rect key="frame" x="124" y="165" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Find Restaurants">
+                                <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,7 +44,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="findRestaurants" destination="BpO-p8-ho2" eventType="touchUpInside" id="yU8-zk-7hH"/>
+                                    <action selector="findRestaurants" destination="BpO-p8-ho2" eventType="touchUpInside" id="f2Q-ih-o63"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,12 +53,12 @@
                     <navigationItem key="navigationItem" title="Find" id="KTP-dN-Cf2"/>
                     <connections>
                         <outlet property="locationCoordinates" destination="Nzx-Fc-dh1" id="ff3-Qi-fQE"/>
-                        <segue destination="cvz-85-0Y4" kind="push" id="o3b-83-pKr"/>
+                        <segue destination="cvz-85-0Y4" kind="push" identifier="showRestaurants" id="WzE-1O-1bl"/>
                     </connections>
                 </viewController>
                 <customObject id="Nzx-Fc-dh1" customClass="CLLocationManager"/>
             </objects>
-            <point key="canvasLocation" x="-818" y="-1030"/>
+            <point key="canvasLocation" x="-948" y="-1248"/>
         </scene>
         <!--Restaurants View Controller - Restaurants-->
         <scene sceneID="I1B-zz-mxC">
@@ -70,15 +70,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantCell" textLabel="Ovk-ue-CLw" style="IBUITableViewCellStyleDefault" id="XRx-Tg-0bW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantCell" textLabel="Ovk-ue-CLw" style="IBUITableViewCellStyleDefault" id="XRx-Tg-0bW">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ovk-ue-CLw">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -87,6 +87,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="Ueq-Tj-x0B" kind="push" id="2Uk-O5-fAu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -97,7 +100,37 @@
                     <navigationItem key="navigationItem" title="Restaurants" id="X2g-eR-hrf"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-372" y="-1036"/>
+            <point key="canvasLocation" x="-502" y="-1254"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Oqc-aL-uk8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okr-V9-oyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Ueq-Tj-x0B" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Egr-Rf-Zxe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9Lq-mm-eWR">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ueq-Tj-x0B" id="1NS-f1-rmR"/>
+                            <outlet property="delegate" destination="Ueq-Tj-x0B" id="KIG-fe-wFK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Qnv-WL-GjH"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-31" y="-1248"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -115,7 +148,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-1810" y="-764"/>
+            <point key="canvasLocation" x="-1940" y="-982"/>
         </scene>
     </scenes>
     <classes>
@@ -131,9 +164,6 @@
         </class>
         <class className="NOMRestaurantsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMRestaurantsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

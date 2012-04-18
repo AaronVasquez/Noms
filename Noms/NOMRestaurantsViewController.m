@@ -7,14 +7,27 @@
 //
 
 #import "NOMRestaurantsViewController.h"
+#import "NOMRestaurants.h"
 
 @interface NOMRestaurantsViewController ()
 
+@property (strong, nonatomic) NOMRestaurants *nearbyRestaurants;
+@property (strong, nonatomic) NSArray *listOfRestaurants;
+
 @end
 
-@implementation NOMRestaurantsViewController
+@implementation NOMRestaurantsViewController 
+@synthesize currLocation = _currLocation;
+@synthesize nearbyRestaurants = _nearbyRestaurants;
+@synthesize listOfRestaurants = _listOfRestaurants;
 
-@synthesize searchBar = _searchBar;
+// custom getter for lazy loading
+- (NOMRestaurants *)nearbyRestaurants {
+    if (!_nearbyRestaurants) _nearbyRestaurants = [[NOMRestaurants alloc] init];
+    return _nearbyRestaurants;
+}
+
+# pragma mark - methods for view controlling
 
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
@@ -26,7 +39,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    // put this in the other screen so it loads earlier...
+    self.listOfRestaurants = [self.nearbyRestaurants getRestaurantsAt:self.currLocation];
+    // 
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -35,7 +51,6 @@
 }
 
 - (void)viewDidUnload {
-    [self setSearchBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -54,15 +69,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return [self.listOfRestaurants count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier = @"RestaurantCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-    cell.textLabel.text = @"test";
     
+    NSDictionary *restaurantInfo = [self.listOfRestaurants objectAtIndex:indexPath.row];
+    cell.textLabel.text = [restaurantInfo objectForKey:@"name"];
     return cell;
 }
 

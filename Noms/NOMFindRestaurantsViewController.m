@@ -7,19 +7,21 @@
 //
 
 #import "NOMFindRestaurantsViewController.h"
+#import "NOMRestaurantsViewController.h"
 
 @interface NOMFindRestaurantsViewController ()
 
 @end
 
-@implementation NOMFindRestaurantsViewController
+@implementation NOMFindRestaurantsViewController {
+    CLLocation *currLocation;
+}
 @synthesize locationCoordinates = _locationCoordinates;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"whatup yo");
+        // Custom initialization
     }
     return self;
 }
@@ -44,18 +46,27 @@
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
-    [self.locationCoordinates stopUpdatingLocation]; // only want to get location once
-    CLLocationCoordinate2D currCoordinate = newLocation.coordinate;
-    NSLog(@"Latitude: %f", currCoordinate.latitude);
-    NSLog(@"Longitude: %f", currCoordinate.longitude);
     
+    [self.locationCoordinates stopUpdatingLocation]; // only want to get location once
+    currLocation = newLocation;
+   
+    // perform segue and pass the current location information
+    [self performSegueWithIdentifier:@"showRestaurants" sender:self];
 }
 
-#pragma mark - actions
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NOMRestaurantsViewController *destinationController = segue.destinationViewController;
+    destinationController.currLocation = currLocation; // pass current location
+}
 
 - (IBAction)findRestaurants {
+    // update currCoordinate
+    currLocation = nil;
     self.locationCoordinates.delegate = self;
     [self.locationCoordinates startUpdatingLocation];
+    
 }
 
 @end
