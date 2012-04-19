@@ -7,18 +7,29 @@
 //
 
 #import "NOMMenuViewController.h"
+#import "NOMMenus.h"
 
 @interface NOMMenuViewController ()
+
+@property (nonatomic, strong) NOMMenus *menu;
 
 @end
 
 @implementation NOMMenuViewController
+@synthesize restaurantInfo = _restaurantInfo;
+@synthesize menu = _menu;
+
+// custom getter
+- (NOMMenus *)menu {
+    if (!_menu) {
+        _menu = [[NOMMenus alloc] initWithRestaurant:self.restaurantInfo];
+    }
+    return _menu;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (self = [super initWithStyle:style]) {
     }
     return self;
 }
@@ -46,28 +57,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma mark - methods
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [self.menu numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.menu numberOfEntriesInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dish"];
+    // need to clean up later and put in model
+    cell.textLabel.text = [[self.menu dishAtSection:indexPath.section andRow:indexPath.row] objectForKey:@"name"];
     
     return cell;
 }

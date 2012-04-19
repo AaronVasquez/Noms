@@ -8,11 +8,13 @@
 
 #import "NOMRestaurantsViewController.h"
 #import "NOMRestaurants.h"
+#import "NOMMenuViewController.h"
 
 @interface NOMRestaurantsViewController ()
 
 @property (strong, nonatomic) NOMRestaurants *nearbyRestaurants;
 @property (strong, nonatomic) NSArray *listOfRestaurants;
+@property (strong, nonatomic) NSDictionary *selectedRestaurant;
 
 @end
 
@@ -20,6 +22,7 @@
 @synthesize currLocation = _currLocation;
 @synthesize nearbyRestaurants = _nearbyRestaurants;
 @synthesize listOfRestaurants = _listOfRestaurants;
+@synthesize selectedRestaurant = _selectedRestaurant;
 
 // custom getter for lazy loading
 - (NOMRestaurants *)nearbyRestaurants {
@@ -121,16 +124,17 @@
 }
 */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [segue.destinationViewController setRestaurantInfo:self.selectedRestaurant];
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    self.selectedRestaurant = [self.listOfRestaurants objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"showMenu" sender:self];
 }
 
 @end
+
+

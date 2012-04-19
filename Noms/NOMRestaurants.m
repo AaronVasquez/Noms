@@ -34,7 +34,6 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
     NSString *urlString = [NSString stringWithFormat:@"%@?%@&%@&%@&ll=%f,%f",
                            foursquareVenueBase, clientId, clientSecret, foursquareFoodCategory,
                            location.coordinate.latitude, location.coordinate.longitude];
-    NSLog(@"%@", urlString);
     return [NSURL URLWithString:urlString];
 }
 
@@ -68,15 +67,5 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
     
     return [self.JSONRestaurants copy];
 }
-
--(NSMutableArray *)getArrayOfRestaurants {
-    NSMutableArray *restaurants = [[NSMutableArray alloc] init];
-    
-    
-    
-    return restaurants;
-}
-
-
 
 @end
