@@ -10,4 +10,8 @@
 
 @interface NOMMenuViewController : UITableViewController
 
+@property (nonatomic, strong) NSDictionary *restaurantInfo;
+
+
+
 @end
