@@ -52,7 +52,6 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
                                foursquareVenueBase,
                                [self.restaurantInfo objectForKey:@"id"],
                                clientId, clientSecret];
-        NSLog(@"URL STRING: %@", urlString);
         NSString *jsonString = [self performFoursquareRequestWithURL:[NSURL URLWithString:urlString]];
         NSDictionary *JSONResponse = [self parseJSON:jsonString];
         
@@ -76,11 +75,10 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
 }
 
 - (NSString *)sectionTitle:(NSInteger)sectionIndex {
-    return [[[[[self.menu objectForKey:@"entries"] 
-                          objectForKey:@"items"]
-                          objectAtIndex:sectionIndex] 
-                          objectForKey:@"entries"] 
-                          objectForKey:@"name"];
+    return [[[[self.menu objectForKey:@"entries"] 
+                         objectForKey:@"items"]
+                         objectAtIndex:sectionIndex] 
+                         objectForKey:@"name"];
 }
 
 - (NSInteger) numberOfEntriesInSection:(NSInteger)sectionIndex {
