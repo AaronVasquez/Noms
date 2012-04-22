@@ -57,11 +57,19 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
         
         // assume only one menu for now...
         // need to catch error
-        self.menu = [[[[[JSONResponse objectForKey:@"response"] 
-                                      objectForKey:@"menu"] 
-                                      objectForKey:@"menus"]
-                                      objectForKey:@"items"]
-                                      objectAtIndex:0];
+        NSNumber *menuCount = [[[[JSONResponse objectForKey:@"response"] 
+                                 objectForKey:@"menu"] 
+                                objectForKey:@"menus"]
+                               objectForKey:@"count"];
+        if ([menuCount intValue] == 0){
+           self.menu = nil;
+        } else {
+            self.menu = [[[[[JSONResponse objectForKey:@"response"] 
+                                          objectForKey:@"menu"] 
+                                          objectForKey:@"menus"]
+                                          objectForKey:@"items"]
+                                          objectAtIndex:0];
+        }
     }
     return self;
 }

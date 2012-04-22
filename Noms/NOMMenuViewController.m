@@ -9,15 +9,17 @@
 #import "NOMMenuViewController.h"
 #import "NOMMenus.h"
 
-@interface NOMMenuViewController ()
+@interface NOMMenuViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
 
 @property (nonatomic, strong) NOMMenus *menu;
+@property (nonatomic, weak) NSString *currDishTitle;
 
 @end
 
 @implementation NOMMenuViewController
 @synthesize restaurantInfo = _restaurantInfo;
 @synthesize menu = _menu;
+@synthesize currDishTitle = _currDishTitle;
 
 // custom getter
 - (NOMMenus *)menu {
@@ -80,7 +82,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSLog(@"%@", [self.menu sectionTitle:section]);
     return [self.menu sectionTitle:section];
 }
 
@@ -125,15 +126,36 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)takePhoto {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // This should go to pictures view
+    // TEMPORARILY goes to camera because I don't know how to add a button to a cell in a table
+    self.currDishTitle = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
+    [self takePhoto];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [viewController.navigationItem setTitle:self.currDishTitle];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // save to database
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
