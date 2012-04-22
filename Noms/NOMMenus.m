@@ -91,14 +91,22 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
     return [numEntries intValue];
 }
 
-// can select name and price of dish
-- (NSDictionary *) dishAtSection:(NSInteger)section andRow:(NSInteger)row {
+- (NSDictionary *) getDishAtSection:(NSInteger)section andRow:(NSInteger)row {
     return [[[[[[self.menu objectForKey:@"entries"] 
-                           objectForKey:@"items"]
-                           objectAtIndex:section] 
-                           objectForKey:@"entries"] 
-                           objectForKey:@"items"] 
-                           objectAtIndex:row];
+                objectForKey:@"items"]
+                objectAtIndex:section] 
+                objectForKey:@"entries"] 
+                objectForKey:@"items"] 
+                objectAtIndex:row]; 
+}
+
+- (NSString *) dishAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return [[self getDishAtSection:section andRow:row] objectForKey:@"name"];
+}
+
+- (NSString *) priceAtSection:(NSInteger)section andRow:(NSInteger)row {
+    // display only first price to keep it simple for now
+    return [[[self getDishAtSection:section andRow:row] objectForKey:@"prices"] objectAtIndex:0];
 }
 
 

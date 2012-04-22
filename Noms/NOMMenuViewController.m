@@ -74,15 +74,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dish"];
     // need to clean up later and put in model
-    cell.textLabel.text = [[self.menu dishAtSection:indexPath.section andRow:indexPath.row] objectForKey:@"name"];
-    
+    cell.textLabel.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
+    cell.detailTextLabel.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSLog(@"%@", [self.menu sectionTitle:section]);
     return [self.menu sectionTitle:section];
-    
 }
 
 /*
