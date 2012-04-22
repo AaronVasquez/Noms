@@ -12,6 +12,7 @@
 
 @interface NOMRestaurantsViewController ()
 
+// move some of this to the model...
 @property (strong, nonatomic) NOMRestaurants *nearbyRestaurants;
 @property (strong, nonatomic) NSArray *listOfRestaurants;
 @property (strong, nonatomic) NSDictionary *selectedRestaurant;
@@ -75,13 +76,19 @@
     return [self.listOfRestaurants count];
 }
 
+// move this to the model later...
+- (NSString *)getCategoryForRestaurant:(NSDictionary *)restaurant {
+    return [[[restaurant objectForKey:@"categories"] objectAtIndex:0] objectForKey:@"shortName"]; 
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"RestaurantCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    // move these out to the model
     NSDictionary *restaurantInfo = [self.listOfRestaurants objectAtIndex:indexPath.row];
     cell.textLabel.text = [restaurantInfo objectForKey:@"name"];
+    cell.detailTextLabel.text = [self getCategoryForRestaurant:restaurantInfo];
     return cell;
 }
 
