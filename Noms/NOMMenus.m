@@ -56,6 +56,7 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
         NSDictionary *JSONResponse = [self parseJSON:jsonString];
         
         // assume only one menu for now...
+        // need to catch error
         self.menu = [[[[[JSONResponse objectForKey:@"response"] 
                                       objectForKey:@"menu"] 
                                       objectForKey:@"menus"]
