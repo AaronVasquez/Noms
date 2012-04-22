@@ -57,18 +57,13 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
         
         // assume only one menu for now...
         // need to catch error
-        NSNumber *menuCount = [[[[JSONResponse objectForKey:@"response"] 
-                                 objectForKey:@"menu"] 
-                                objectForKey:@"menus"]
-                               objectForKey:@"count"];
+        NSDictionary *menusList = [[[JSONResponse objectForKey:@"response"] objectForKey:@"menu"] objectForKey:@"menus"];
+        
+        NSNumber *menuCount = [menusList objectForKey:@"count"];
         if ([menuCount intValue] == 0){
            self.menu = nil;
         } else {
-            self.menu = [[[[[JSONResponse objectForKey:@"response"] 
-                                          objectForKey:@"menu"] 
-                                          objectForKey:@"menus"]
-                                          objectForKey:@"items"]
-                                          objectAtIndex:0];
+            self.menu = [[menusList objectForKey:@"items"] objectAtIndex:0];
         }
     }
     return self;
@@ -116,10 +111,5 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
     // display only first price to keep it simple for now
     return [[[self getDishAtSection:section andRow:row] objectForKey:@"prices"] objectAtIndex:0];
 }
-
-
-
-
-
 
 @end

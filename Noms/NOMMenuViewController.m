@@ -142,7 +142,7 @@
 }
 
 #pragma mark - UINavigationControllerDelegate
-
+// not working as expected...
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [viewController.navigationItem setTitle:self.currDishTitle];
 }
