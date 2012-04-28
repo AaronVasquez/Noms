@@ -8,15 +8,18 @@
 
 #import "NOMFindRestaurantsViewController.h"
 #import "NOMRestaurantsViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface NOMFindRestaurantsViewController ()
+@interface NOMFindRestaurantsViewController () <CLLocationManagerDelegate>
+
+@property (strong, nonatomic) IBOutlet CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *myLocation;
 
 @end
 
-@implementation NOMFindRestaurantsViewController {
-    CLLocation *currLocation;
-}
-@synthesize locationCoordinates = _locationCoordinates;
+@implementation NOMFindRestaurantsViewController 
+@synthesize locationManager = _locationManager;
+@synthesize myLocation = _myLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,7 +35,8 @@
 }
 
 - (void)viewDidUnload {
-    [self setLocationCoordinates:nil];
+    self.locationManager = nil;
+    self.myLocation = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -41,14 +45,23 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Controller methods
+
+- (IBAction)findRestaurants {
+    // update currCoordinate
+    self.myLocation = nil;
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+}
+
 #pragma mark - CoreLocation Delegate
 
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
     
-    [self.locationCoordinates stopUpdatingLocation]; // only want to get location once
-    currLocation = newLocation;
+    [self.locationManager stopUpdatingLocation]; // only want to get location once
+    self.myLocation = newLocation;
    
     // perform segue and pass the current location information
     [self performSegueWithIdentifier:@"showRestaurants" sender:self];
@@ -58,15 +71,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NOMRestaurantsViewController *destinationController = segue.destinationViewController;
-    destinationController.currLocation = currLocation; // pass current location
+    destinationController.currLocation = self.myLocation; // pass current location
 }
 
-- (IBAction)findRestaurants {
-    // update currCoordinate
-    currLocation = nil;
-    self.locationCoordinates.delegate = self;
-    [self.locationCoordinates startUpdatingLocation];
-    
-}
 
 @end

@@ -73,11 +73,21 @@
     return [self.menu numberOfEntriesInSection:section];
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dish"];
+
+#define TITLE_TAG 1
+#define PRICE_TAG 2
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dish with camera"];
     // need to clean up later and put in model
-    cell.textLabel.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
-    cell.detailTextLabel.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
+    UILabel *title = (UILabel *)[cell viewWithTag:TITLE_TAG];
+    UILabel *price = (UILabel *)[cell viewWithTag:PRICE_TAG];
+    title.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
+    price.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
+//    cell.textLabel.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
+//    cell.detailTextLabel.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
     return cell;
 }
 
@@ -138,7 +148,7 @@
     // This should go to pictures view
     // TEMPORARILY goes to camera because I don't know how to add a button to a cell in a table
     self.currDishTitle = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
-    // [self takePhoto];
+    [self takePhoto];
 }
 
 #pragma mark - UINavigationControllerDelegate

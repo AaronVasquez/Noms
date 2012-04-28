@@ -10,11 +10,9 @@
 // pressing the tab bar button will serve the same function as this button
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface NOMFindRestaurantsViewController : UIViewController <CLLocationManagerDelegate>
+@interface NOMFindRestaurantsViewController : UIViewController 
 
-@property (strong, nonatomic) IBOutlet CLLocationManager *locationCoordinates;
 - (IBAction)findRestaurants;
 
 @end
