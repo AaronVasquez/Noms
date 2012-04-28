@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Find" id="3H3-re-4sc"/>
                     <connections>
                         <outlet property="locationManager" destination="Nzx-Fc-dh1" id="rDz-3d-5pP"/>
-                        <segue destination="cvz-85-0Y4" kind="push" identifier="showRestaurants" id="WzE-1O-1bl"/>
+                        <segue destination="cvz-85-0Y4" kind="push" identifier="show restaurants" id="WzE-1O-1bl"/>
                     </connections>
                 </viewController>
                 <customObject id="Nzx-Fc-dh1" customClass="CLLocationManager"/>
@@ -152,7 +152,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9tA-a2-mOT">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="9tA-a2-mOT">
                                             <rect key="frame" x="53" y="3" width="247" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>

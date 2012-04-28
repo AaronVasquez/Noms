@@ -56,15 +56,15 @@
 
 #pragma mark - CoreLocation Delegate
 
+// threads cause this to be performed more than once?!?!?
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
     
     [self.locationManager stopUpdatingLocation]; // only want to get location once
     self.myLocation = newLocation;
-   
     // perform segue and pass the current location information
-    [self performSegueWithIdentifier:@"showRestaurants" sender:self];
+    [self performSegueWithIdentifier:@"show restaurants" sender:self];
 }
 
 #pragma mark - segue
