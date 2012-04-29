@@ -148,7 +148,7 @@
     // This should go to pictures view
     // TEMPORARILY goes to camera because I don't know how to add a button to a cell in a table
     self.currDishTitle = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
-    [self takePhoto];
+    // [self takePhoto];
 }
 
 #pragma mark - UINavigationControllerDelegate

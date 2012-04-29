@@ -21,7 +21,8 @@
 		93423855154B2A8600D3F008 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342384B154B2A8600D3F008 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93423858154B2B5300D3F008 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93423857154B2B5300D3F008 /* MapKit.framework */; };
 		9342385B154BAC5D00D3F008 /* NOMAddNomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342385A154BAC5D00D3F008 /* NOMAddNomViewController.m */; };
-		9342385E154BAFC700D3F008 /* NOMNomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342385D154BAFC700D3F008 /* NOMNomModel.m */; };
+		9342385E154BAFC700D3F008 /* NOMNommedFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342385D154BAFC700D3F008 /* NOMNommedFoodModel.m */; };
+		93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */; };
 		93A7A2C0153E6F04006D63C7 /* NOMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */; };
 		93A7A2C4153E7078006D63C7 /* NOMMenus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2C3153E7078006D63C7 /* NOMMenus.m */; };
 		93C3C1EE153233EF004BEF32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C3C1ED153233EF004BEF32 /* UIKit.framework */; };
@@ -63,8 +64,10 @@
 		93423857154B2B5300D3F008 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93423859154BAC5D00D3F008 /* NOMAddNomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMAddNomViewController.h; sourceTree = "<group>"; };
 		9342385A154BAC5D00D3F008 /* NOMAddNomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMAddNomViewController.m; sourceTree = "<group>"; };
-		9342385C154BAFC700D3F008 /* NOMNomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNomModel.h; sourceTree = "<group>"; };
-		9342385D154BAFC700D3F008 /* NOMNomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNomModel.m; sourceTree = "<group>"; };
+		9342385C154BAFC700D3F008 /* NOMNommedFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NOMNommedFoodModel.h; sourceTree = "<group>"; };
+		9342385D154BAFC700D3F008 /* NOMNommedFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNommedFoodModel.m; sourceTree = "<group>"; };
+		93423867154D118600D3F008 /* NOMAugmentedMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMAugmentedMenuViewController.h; sourceTree = "<group>"; };
+		93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMAugmentedMenuViewController.m; sourceTree = "<group>"; };
 		93A7A2BE153E6F04006D63C7 /* NOMMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMMenuViewController.h; sourceTree = "<group>"; };
 		93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMMenuViewController.m; sourceTree = "<group>"; };
 		93A7A2C2153E7078006D63C7 /* NOMMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMMenus.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */,
 				93A7A2BE153E6F04006D63C7 /* NOMMenuViewController.h */,
 				93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */,
+				93423867154D118600D3F008 /* NOMAugmentedMenuViewController.h */,
+				93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -202,8 +207,8 @@
 		93C3C21A15323F7D004BEF32 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				9342385C154BAFC700D3F008 /* NOMNomModel.h */,
-				9342385D154BAFC700D3F008 /* NOMNomModel.m */,
+				9342385C154BAFC700D3F008 /* NOMNommedFoodModel.h */,
+				9342385D154BAFC700D3F008 /* NOMNommedFoodModel.m */,
 				93C3C21E153248DC004BEF32 /* NOMRestaurants.h */,
 				93C3C21F153248DC004BEF32 /* NOMRestaurants.m */,
 				93A7A2C2153E7078006D63C7 /* NOMMenus.h */,
@@ -293,7 +298,8 @@
 				93423854154B2A8600D3F008 /* AFXMLRequestOperation.m in Sources */,
 				93423855154B2A8600D3F008 /* UIImageView+AFNetworking.m in Sources */,
 				9342385B154BAC5D00D3F008 /* NOMAddNomViewController.m in Sources */,
-				9342385E154BAFC700D3F008 /* NOMNomModel.m in Sources */,
+				9342385E154BAFC700D3F008 /* NOMNommedFoodModel.m in Sources */,
+				93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

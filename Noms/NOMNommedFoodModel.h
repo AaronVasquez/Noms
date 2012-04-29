@@ -1,5 +1,5 @@
 //
-//  NOMNomModel.h
+//  NOMNommedFoododel.h
 //  Noms
 //
 //  Created by Aaron Vasquez on 4/28/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NOMNomModel : NSObject
+@interface NOMNommedFoodModel : NSObject
 
 @property (strong, nonatomic) NSString *comment;
 

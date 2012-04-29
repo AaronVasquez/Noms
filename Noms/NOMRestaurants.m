@@ -20,19 +20,20 @@
 @synthesize downloadedData = _downloadedData;
 @synthesize JSONRestaurants = _JSONRestaurants;
 
-static NSString *foursquareVenueBase = @"https://api.foursquare.com/v2/venues/search";
-static NSString *foursquareFoodCategory = @"categoryId=4d4b7105d754a06374d81259"; // might change...need to update once in a while
-static NSString *clientId = @"client_id=RZQ03RP5VIL21PYDAGT5A3DWYPG43PCZL1HIBAGRNVF3NMYM";
-static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ400Y5KKJWPEZAPYKIS";
-
 - (void)fetchData:(NSString *)dataPath {
+    
+#define FOURSQ_VENUES @"https://api.foursquare.com/v2/venues/search"
+#define FOURSQ_FOOD @"categoryId=4d4b7105d754a06374d81259"
+#define CLIENT_ID @"client_id=RZQ03RP5VIL21PYDAGT5A3DWYPG43PCZL1HIBAGRNVF3NMYM"
+#define CLIENT_SECRET @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ400Y5KKJWPEZAPYKIS"
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:dataPath] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
 - (NSURL *)urlWithLocation:(CLLocation *)location {
     NSString *urlString = [NSString stringWithFormat:@"%@?%@&%@&%@&ll=%f,%f",
-                           foursquareVenueBase, clientId, clientSecret, foursquareFoodCategory,
+                           FOURSQ_VENUES, CLIENT_ID, CLIENT_SECRET, FOURSQ_FOOD,
                            location.coordinate.latitude, location.coordinate.longitude];
     return [NSURL URLWithString:urlString];
 }
@@ -64,7 +65,6 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
     NSString *jsonString = [self performFoursquareRequestWithURL:url];
     NSDictionary *JSONRespnse = [self parseJSON:jsonString];
     self.JSONRestaurants = [[[[JSONRespnse objectForKey:@"response"] objectForKey:@"groups"] objectAtIndex:0] objectForKey:@"items"];
-    
     return [self.JSONRestaurants copy];
 }
 
