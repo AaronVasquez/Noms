@@ -9,7 +9,7 @@
 #import "NOMMenuViewController.h"
 #import "NOMMenus.h"
 
-@interface NOMMenuViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
+@interface NOMMenuViewController () 
 
 @property (nonatomic, strong) NOMMenus *menu;
 @property (nonatomic, weak) NSString *currDishTitle;
@@ -136,36 +136,17 @@
 
 #pragma mark - Table view delegate
 
-- (void)takePhoto {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.delegate = self;
-    imagePicker.allowsEditing = YES;
-    [self.navigationController presentViewController:imagePicker animated:YES completion:nil];
-}
-
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // This should go to pictures view
-    // TEMPORARILY goes to camera because I don't know how to add a button to a cell in a table
-    self.currDishTitle = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
-    // [self takePhoto];
 }
+*/
 
-#pragma mark - UINavigationControllerDelegate
-// not working as expected...
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    [viewController.navigationItem setTitle:self.currDishTitle];
-}
+#pragma mark - segue
 
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // save to database
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"augmented menu"]) {
+        [segue.destinationViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    }
 }
 
 @end

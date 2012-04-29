@@ -7,12 +7,16 @@
 //
 
 #import "NOMAddNomViewController.h"
+#import "NOMNommedFoodModel.h"
 
-@interface NOMAddNomViewController ()
+@interface NOMAddNomViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
+@property (weak, nonatomic) NOMNommedFoodModel *nommedFood;
 
 @end
 
 @implementation NOMAddNomViewController
+@synthesize dish = _dish;
+@synthesize nommedFood = _nommedFood;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +42,52 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Helper Methods
+
+- (void)takePhoto {
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        // choose
+        sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType = sourceType;
+    // imagePickerController.allowsEditing = YES;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+#pragma mark - Actions
+
+- (IBAction)dismissView:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)addPhoto:(id)sender {
+    [self takePhoto];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // save to database
+    
+
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UINavigationControllerDelegate
+// not working as expected...
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // set title to the food item
+    // [viewController.navigationItem setTitle:self.currDishTitle];
 }
 
 @end

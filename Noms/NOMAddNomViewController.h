@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface NOMAddNomViewController : UIViewController
+@property (weak, nonatomic) NSDictionary *dish; //JSON Object
+
+- (IBAction)dismissView:(id)sender;
+- (IBAction)addPhoto:(id)sender;
 
 @end

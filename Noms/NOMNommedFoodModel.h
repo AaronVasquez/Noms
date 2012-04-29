@@ -14,4 +14,7 @@
 
 - (NSString *)getDishTitle;
 
++ (void)uploadPhotoWithImage:(UIImage *)image 
+                     comment:(NSString *)comment; // completion:(void (^)(Photo *photo, NSError *error))block;
+
 @end

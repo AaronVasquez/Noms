@@ -34,11 +34,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2l-db-W8U">
-                                <rect key="frame" x="20" y="44" width="280" height="327"/>
+                                <rect key="frame" x="20" y="20" width="280" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="80"/>
                                 <color key="tintColor" red="1" green="0.44313728810000003" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="noms">
+                                    <color key="titleColor" red="1" green="0.44313728810000003" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -145,7 +147,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dish with camera" id="ysi-MD-PT5">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dish with camera" id="ysi-MD-PT5">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -153,7 +155,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="9tA-a2-mOT">
-                                            <rect key="frame" x="53" y="3" width="247" height="21"/>
+                                            <rect key="frame" x="53" y="2" width="247" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -176,7 +178,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BTw-uZ-i5T">
-                                            <rect key="frame" x="53" y="19" width="247" height="21"/>
+                                            <rect key="frame" x="53" y="20" width="247" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,7 +188,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="a7W-Ns-ff5" kind="modal" id="FFZ-Ew-PJP"/>
+                                    <segue destination="a7W-Ns-ff5" kind="modal" identifier="augmented menu" id="FFZ-Ew-PJP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -270,6 +272,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="Blu-Jn-aVE" eventType="touchUpInside" id="0Dg-nP-MXX"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Nommentary" borderStyle="roundedRect" minimumFontSize="17" id="ia5-6r-an4">
                                         <rect key="frame" x="20" y="310" width="280" height="31"/>
@@ -299,7 +304,11 @@
                                 <color key="tintColor" red="1" green="0.44313728810000003" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
                                     <navigationItem title="Add Nom" id="Nat-rR-0jm">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="679-Eh-fUI"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="679-Eh-fUI">
+                                            <connections>
+                                                <action selector="dismissView:" destination="Blu-Jn-aVE" id="pU7-Gc-vsy"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
