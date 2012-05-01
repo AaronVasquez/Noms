@@ -320,6 +320,38 @@
             <point key="canvasLocation" x="445" y="-817"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CLLocationManager" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
+        </class>
+        <class className="NOMAddNomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMAddNomViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="dismissView:"/>
+            </relationships>
+        </class>
+        <class className="NOMAugmentedMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMAugmentedMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissView:"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="NOMFindRestaurantsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMFindRestaurantsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="findRestaurants"/>
+                <relationship kind="outlet" name="locationManager" candidateClass="CLLocationManager"/>
+            </relationships>
+        </class>
+        <class className="NOMMenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMMenuViewController.h"/>
+        </class>
+        <class className="NOMRestaurantsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMRestaurantsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

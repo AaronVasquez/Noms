@@ -8,6 +8,7 @@
 
 #import "NOMMenuViewController.h"
 #import "NOMMenus.h"
+#import "NOMAugmentedMenuViewController.h"
 
 @interface NOMMenuViewController () 
 
@@ -146,6 +147,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"augmented menu"]) {
         [segue.destinationViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+        // pass menu and current dish
     }
 }
 
