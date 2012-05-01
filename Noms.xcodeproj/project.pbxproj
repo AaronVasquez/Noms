@@ -34,6 +34,7 @@
 		93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */; };
 		93C3C21D15323FD3004BEF32 /* NOMRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */; };
 		93C3C220153248DC004BEF32 /* NOMRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 93C3C21F153248DC004BEF32 /* NOMRestaurants.m */; };
+		93D861A3154FE84300B64AB6 /* NOMFoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D861A2154FE84300B64AB6 /* NOMFoodDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,7 @@
 		93423857154B2B5300D3F008 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93423859154BAC5D00D3F008 /* NOMAddNomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMAddNomViewController.h; sourceTree = "<group>"; };
 		9342385A154BAC5D00D3F008 /* NOMAddNomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMAddNomViewController.m; sourceTree = "<group>"; };
-		9342385C154BAFC700D3F008 /* NOMNommedFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NOMNommedFoodModel.h; sourceTree = "<group>"; };
+		9342385C154BAFC700D3F008 /* NOMNommedFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNommedFoodModel.h; sourceTree = "<group>"; };
 		9342385D154BAFC700D3F008 /* NOMNommedFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNommedFoodModel.m; sourceTree = "<group>"; };
 		93423867154D118600D3F008 /* NOMAugmentedMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMAugmentedMenuViewController.h; sourceTree = "<group>"; };
 		93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMAugmentedMenuViewController.m; sourceTree = "<group>"; };
@@ -87,6 +88,8 @@
 		93C3C21C15323FD3004BEF32 /* NOMRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurantsViewController.m; sourceTree = "<group>"; };
 		93C3C21E153248DC004BEF32 /* NOMRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMRestaurants.h; sourceTree = "<group>"; };
 		93C3C21F153248DC004BEF32 /* NOMRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMRestaurants.m; sourceTree = "<group>"; };
+		93D861A1154FE84300B64AB6 /* NOMFoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMFoodDetailViewController.h; sourceTree = "<group>"; };
+		93D861A2154FE84300B64AB6 /* NOMFoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMFoodDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 		93C3C21915323F69004BEF32 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93D861A1154FE84300B64AB6 /* NOMFoodDetailViewController.h */,
+				93D861A2154FE84300B64AB6 /* NOMFoodDetailViewController.m */,
 				93423859154BAC5D00D3F008 /* NOMAddNomViewController.h */,
 				9342385A154BAC5D00D3F008 /* NOMAddNomViewController.m */,
 				93218F56153ABDD400E96DCC /* NOMFindRestaurantsViewController.h */,
@@ -300,6 +305,7 @@
 				9342385B154BAC5D00D3F008 /* NOMAddNomViewController.m in Sources */,
 				9342385E154BAFC700D3F008 /* NOMNommedFoodModel.m in Sources */,
 				93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */,
+				93D861A3154FE84300B64AB6 /* NOMFoodDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

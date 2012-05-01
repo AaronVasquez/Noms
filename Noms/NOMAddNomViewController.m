@@ -11,12 +11,15 @@
 
 @interface NOMAddNomViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
 @property (weak, nonatomic) NOMNommedFoodModel *nommedFood;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @end
 
 @implementation NOMAddNomViewController
+@synthesize restaurant = _restaurant;
 @synthesize dish = _dish;
 @synthesize nommedFood = _nommedFood;
+@synthesize navigationBar = _navigationBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.navigationBar.topItem.title = self.dish;
 }
 
 - (void)viewDidUnload
 {
+    [self setNavigationBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

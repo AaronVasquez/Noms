@@ -8,6 +8,7 @@
 
 #import "NOMMenuViewController.h"
 #import "NOMMenus.h"
+#import "NOMAddNomViewController.h"
 #import "NOMAugmentedMenuViewController.h"
 
 @interface NOMMenuViewController () 
@@ -60,10 +61,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
-#pragma mark - methods
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -85,10 +82,8 @@
     // need to clean up later and put in model
     UILabel *title = (UILabel *)[cell viewWithTag:TITLE_TAG];
     UILabel *price = (UILabel *)[cell viewWithTag:PRICE_TAG];
-    title.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
+    title.text = [self.menu dishTitleAtSection:indexPath.section andRow:indexPath.row];
     price.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
-//    cell.textLabel.text = [self.menu dishAtSection:indexPath.section andRow:indexPath.row];
-//    cell.detailTextLabel.text = [self.menu priceAtSection:indexPath.section andRow:indexPath.row];
     return cell;
 }
 
@@ -96,44 +91,6 @@
     return [self.menu sectionTitle:section];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -146,9 +103,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"augmented menu"]) {
-        [segue.destinationViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
         // pass menu and current dish
+    } else if ([segue.identifier isEqualToString:@"add nom"]) {
+        // pass restaurant
+        UIButton *button = (UIButton *)sender;
+        UITableViewCell *cell = (UITableViewCell *)button.superview.superview; // not sure why I had to do this...
+        UITableView *tableView = (UITableView *)cell.superview;
+        NSIndexPath *indexPath = [tableView indexPathForCell:cell];
+        NOMAddNomViewController *destinationViewController =  segue.destinationViewController;
+        destinationViewController.restaurant = self.restaurantInfo;
+        destinationViewController.dish = [self.menu dishTitleAtSection:indexPath.section andRow:indexPath.row];
     }
 }
+
+#pragma mark - methods
 
 @end

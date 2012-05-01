@@ -11,5 +11,6 @@
 @interface NOMAugmentedMenuViewController : UIViewController
 
 - (IBAction)dismissView:(id)sender;
+- (IBAction)showDetail:(UIBarButtonItem *)sender;
 
 @end

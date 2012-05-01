@@ -46,4 +46,9 @@
 - (IBAction)dismissView:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)showDetail:(UIBarButtonItem *)sender {
+    // pass in dish
+    [self performSegueWithIdentifier:@"food detail" sender:self];
+}
 @end
