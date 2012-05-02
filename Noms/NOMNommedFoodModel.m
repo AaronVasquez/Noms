@@ -7,6 +7,7 @@
 //
 
 #import "NOMNommedFoodModel.h"
+#import "AFHTTPClient.h"
 
 @interface NOMNommedFoodModel()
 
@@ -40,8 +41,6 @@
                         block:(void (^)(Photo *photo, NSError *error))block
 {
     NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionary];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"photo[lat]"];
-    [mutableParameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"photo[lng]"];
     
     NSMutableURLRequest *mutableURLRequest = [[GeoPhotoAPIClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"/photos" parameters:mutableParameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.8) name:@"photo[image]" fileName:@"image.jpg" mimeType:@"image/jpeg"];
@@ -89,7 +88,6 @@
 */
 
 /*
-    self.title = NSLocalizedString(@"GeoPhoto", nil);
     
     NSURL *url = [NSURL URLWithString:@"http://localhost:5000/photos.json"];
     [[AFJSONRequestOperation JSONRequestOperationWithRequest:[NSURLRequest requestWithURL:url] success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

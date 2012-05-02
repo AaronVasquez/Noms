@@ -18,6 +18,7 @@
 - (NSInteger) numberOfSections;
 - (NSInteger) numberOfEntriesInSection:(NSInteger)sectionIndex;
 // can select name and price of dish
+- (NSDictionary *) dishAtSection:(NSInteger)section andRow:(NSInteger)row;
 - (NSString *) dishTitleAtSection:(NSInteger)section andRow:(NSInteger)row;
 - (NSString *) priceAtSection:(NSInteger)section andRow:(NSInteger)row;
 

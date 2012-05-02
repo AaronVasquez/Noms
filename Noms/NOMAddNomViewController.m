@@ -12,6 +12,9 @@
 @interface NOMAddNomViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
 @property (weak, nonatomic) NOMNommedFoodModel *nommedFood;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIImageView *foodPreview;
+- (IBAction)addedNommentary:(UITextField *)sender;
+- (IBAction)submitToServer:(UIButton *)sender;
 
 @end
 
@@ -20,6 +23,7 @@
 @synthesize dish = _dish;
 @synthesize nommedFood = _nommedFood;
 @synthesize navigationBar = _navigationBar;
+@synthesize foodPreview = _foodPreview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,12 +37,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.navigationBar.topItem.title = self.dish;
+	self.navigationBar.topItem.title = [self.dish objectForKey:@"name"];
 }
 
 - (void)viewDidUnload
 {
     [self setNavigationBar:nil];
+    [self setFoodPreview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -59,7 +64,7 @@
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType = sourceType;
-    // imagePickerController.allowsEditing = YES;
+    imagePickerController.allowsEditing = YES; // use aviary later?
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
@@ -77,9 +82,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // save to database
-    
-
-    
+    UIImageWriteToSavedPhotosAlbum([info objectForKey:@"UIImagePickerControllerEditedImage"], nil, nil, nil); // make async
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -88,10 +91,13 @@
 }
 
 #pragma mark - UINavigationControllerDelegate
-// not working as expected...
+
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // set title to the food item
-    // [viewController.navigationItem setTitle:self.currDishTitle];
 }
 
+- (IBAction)addedNommentary:(id)sender {
+}
+
+- (IBAction)submitToServer:(UIButton *)sender {
+}
 @end

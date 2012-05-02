@@ -103,6 +103,10 @@ static NSString *clientSecret = @"client_secret=XJASCKD02GEOEYDFRLGXE15GW4XXAJ40
                 objectAtIndex:row]; 
 }
 
+- (NSDictionary *) dishAtSection:(NSInteger)section andRow:(NSInteger)row {
+    return [self getDishAtSection:section andRow:row];
+}
+
 - (NSString *) dishTitleAtSection:(NSInteger)section andRow:(NSInteger)row {
     return [[self getDishAtSection:section andRow:row] objectForKey:@"name"];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "NOMAppDelegate.h"
+#import <RestKit/RestKit.h>
 
 @implementation NOMAppDelegate
 

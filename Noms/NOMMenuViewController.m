@@ -112,7 +112,7 @@
         NSIndexPath *indexPath = [tableView indexPathForCell:cell];
         NOMAddNomViewController *destinationViewController =  segue.destinationViewController;
         destinationViewController.restaurant = self.restaurantInfo;
-        destinationViewController.dish = [self.menu dishTitleAtSection:indexPath.section andRow:indexPath.row];
+        destinationViewController.dish = [self.menu dishAtSection:indexPath.section andRow:indexPath.row]; 
     }
 }
 
