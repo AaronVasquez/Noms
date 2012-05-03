@@ -10,7 +10,7 @@
 #import "NOMNommedFoodModel.h"
 
 @interface NOMAddNomViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
-@property (weak, nonatomic) NOMNommedFoodModel *nommedFood;
+@property (strong, nonatomic) NOMNommedFoodModel *nommedFood;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIImageView *foodPreview;
 - (IBAction)addedNommentary:(UITextField *)sender;
@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.nommedFood = [[NOMNommedFoodModel alloc] initWith:self.dish];
 	self.navigationBar.topItem.title = [self.dish objectForKey:@"name"];
 }
 
@@ -68,21 +69,15 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
-#pragma mark - Actions
-
-- (IBAction)dismissView:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-- (IBAction)addPhoto:(id)sender {
-    [self takePhoto];
-}
-
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // save to database
-    UIImageWriteToSavedPhotosAlbum([info objectForKey:@"UIImagePickerControllerEditedImage"], nil, nil, nil); // make async
+    // save locally
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    // UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil); // make async
+    self.foodPreview.image = image; // show preview
+    self.nommedFood.image = image;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -95,9 +90,27 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
 }
 
-- (IBAction)addedNommentary:(id)sender {
+#pragma mark - Actions
+
+- (IBAction)dismissView:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)addPhoto:(id)sender {
+    [self takePhoto];
+}
+
+- (IBAction)addedNommentary:(UITextField *)sender {
+    self.nommedFood.nomment = sender.text;
 }
 
 - (IBAction)submitToServer:(UIButton *)sender {
+    
+    // check if photo uploaded
+    if (self.nommedFood.nomment == nil) {
+        self.nommedFood.nomment = @"nom nom nom";
+    }
+    NSLog(@"pressed button");
+    [self.nommedFood uploadNomToServer];
 }
 @end
