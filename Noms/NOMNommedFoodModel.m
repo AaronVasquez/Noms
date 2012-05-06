@@ -47,17 +47,16 @@ static CGFloat const kPhotoJPEGQuality = 0.6;
 
 }
 
-+ (void)uploadNomWithImage:(UIImage *)image comment:(NSString *)comment block:(void(^)(NOMNommedFoodModel *nommedFood, NSError *error))block
-{
++ (void)uploadNomWithImage:(UIImage *)image comment:(NSString *)comment block:(void(^)(NOMNommedFoodModel *nommedFood, NSError *error))block {
     // create dictionary
     NSMutableDictionary *mutableParameters = [NSMutableDictionary dictionaryWithCapacity:1];
     [mutableParameters setObject:comment forKey:@"comment"];
     // later add in foursquare IDs to reference...
-    NSLog(@"Trying to send...");
+    
     // create request
     NSMutableURLRequest *mutableURLRequest = [[NOMNomsAPIClient sharedClient] 
                                               multipartFormRequestWithMethod:@"POST" 
-                                              path:@"/photos"
+                                              path:@"/photos.json"
                                               parameters:mutableParameters
                                               constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                                                   [formData appendPartWithFileData:UIImageJPEGRepresentation(image, kPhotoJPEGQuality) name:@"photo[image]" fileName:@"image.jpg" mimeType:@"image/jpeg"];

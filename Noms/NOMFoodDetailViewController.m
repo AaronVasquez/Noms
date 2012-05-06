@@ -11,7 +11,6 @@
 
 @interface NOMFoodDetailViewController ()
 
-@property (weak, nonatomic) NOMMenus *menu;
 - (NSString *) displayPrices;
 
 @end
@@ -20,7 +19,7 @@
 @synthesize foodTitle = _foodTitle;
 @synthesize foodDescription = _foodDescription;
 @synthesize foodPrices = _foodPrices;
-@synthesize menu = _menu;
+@synthesize dish = _dish;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.foodTitle.text;
-    self.foodDescription.text;
+    NSLog(@"%@", self.dish);
+    self.foodTitle.text = [self.dish objectForKey:@"name"];
+    self.foodDescription.text = [self.dish objectForKey:@"description"];
     self.foodPrices.text = [self displayPrices];
 }
 
@@ -58,7 +58,11 @@
 }
 
 - (NSString *) displayPrices {
-    
+    NSString *priceList = [[NSString alloc] initWithString:@""];
+    for (NSString *price in [self.dish objectForKey:@"prices"]) {
+        priceList = [priceList stringByAppendingFormat:@"\n%@", price];
+    }
+    return priceList;
 }
 
 @end

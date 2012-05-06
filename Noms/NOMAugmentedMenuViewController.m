@@ -8,12 +8,16 @@
 
 #import "NOMAugmentedMenuViewController.h"
 #import "NOMNommedFoodModel.h"
+#import "NOMFoodDetailViewController.h"
 
 @interface NOMAugmentedMenuViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
 
 @end
 
 @implementation NOMAugmentedMenuViewController
+@synthesize navigationBar = _navigationBar;
+@synthesize dish = _dish;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,15 +31,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view
-    
-
+	self.navigationBar.title = [self.dish objectForKey:@"name"];
+    if (![self.dish objectForKey:@"description"]) {
+        self.navigationBar.rightBarButtonItem = nil;
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setNavigationBar:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -48,7 +53,11 @@
 }
 
 - (IBAction)showDetail:(UIBarButtonItem *)sender {
-    // pass in dish
     [self performSegueWithIdentifier:@"food detail" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NOMFoodDetailViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.dish = self.dish;
 }
 @end

@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *foodTitle;
 @property (weak, nonatomic) IBOutlet UILabel *foodDescription;
 @property (weak, nonatomic) IBOutlet UILabel *foodPrices;
+@property (weak, nonatomic) NSDictionary *dish;
 - (IBAction)dissmissView:(UIBarButtonItem *)sender;
 @end

@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#define kAddNomSegue @"add nom"
+#define kDetailNomSegue @"augmented menu"
+
 #import "NOMMenuViewController.h"
 #import "NOMMenus.h"
 #import "NOMAddNomViewController.h"
@@ -102,9 +105,14 @@
 #pragma mark - segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"augmented menu"]) {
-        // pass menu and current dish
-    } else if ([segue.identifier isEqualToString:@"add nom"]) {
+    if ([segue.identifier isEqualToString:kDetailNomSegue]) {
+        // pass current dish
+        UITableViewCell *cell = sender;
+        NSDictionary *dish = [self.menu dishAtSection:[self.tableView indexPathForCell:cell].section 
+                                               andRow:[self.tableView indexPathForCell:cell].row];
+        NOMAugmentedMenuViewController *menuViewController = segue.destinationViewController;
+        menuViewController.dish = dish;
+    } else if ([segue.identifier isEqualToString:kAddNomSegue]) {
         // pass restaurant
         UIButton *button = (UIButton *)sender;
         UITableViewCell *cell = (UITableViewCell *)button.superview.superview; // not sure why I had to do this...

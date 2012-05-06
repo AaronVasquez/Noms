@@ -131,7 +131,6 @@
     }
     [NOMNommedFoodModel uploadNomWithImage:self.image comment:self.nomment block:^(NOMNommedFoodModel *food, NSError *error) {
         [self.activityIndicatorView stopAnimating];
-        
         if (error) {
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Upload Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
         } else {

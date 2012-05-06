@@ -9,8 +9,8 @@
 #import "NOMNomsAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-#define kNomsBaseURL @"http://nombomb.herokuapp.com"
-#define kNomsBaseURL_Dev @"http://localhost:5000"
+#define kNomsBaseURL @"http://nombomb.herokuapp.com/"
+#define kNomsBaseURL_Dev @"http://localhost:5000/"
 #define kNomsCreatePhotoPath @"photos.json"
 
 @implementation NOMNomsAPIClient

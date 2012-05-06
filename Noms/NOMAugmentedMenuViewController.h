@@ -10,6 +10,7 @@
 
 @interface NOMAugmentedMenuViewController : UIViewController
 
+@property (weak, nonatomic) NSDictionary *dish;
 - (IBAction)dismissView:(id)sender;
 - (IBAction)showDetail:(UIBarButtonItem *)sender;
 
