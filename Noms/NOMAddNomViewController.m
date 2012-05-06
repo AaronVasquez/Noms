@@ -7,14 +7,21 @@
 //
 
 #import "NOMAddNomViewController.h"
+#import "AFJSONRequestOperation.h"
+#import "AFImageRequestOperation.h"
 #import "NOMNommedFoodModel.h"
 
 @interface NOMAddNomViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate >
 @property (strong, nonatomic) NOMNommedFoodModel *nommedFood;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIImageView *foodPreview;
+@property (weak, nonatomic) IBOutlet UITextField *nommentTextField;
+@property (strong, nonatomic, readwrite) UIActivityIndicatorView *activityIndicatorView;
+@property (strong, nonatomic) NSString *nomment;
+@property (strong, nonatomic) UIImage *image;
 - (IBAction)addedNommentary:(UITextField *)sender;
 - (IBAction)submitToServer:(UIButton *)sender;
+- (IBAction)tapBackground:(UIView *)sender;
 
 @end
 
@@ -24,6 +31,10 @@
 @synthesize nommedFood = _nommedFood;
 @synthesize navigationBar = _navigationBar;
 @synthesize foodPreview = _foodPreview;
+@synthesize nommentTextField = _nommentTextField;
+@synthesize activityIndicatorView = _activityIndicatorView;
+@synthesize nomment = _nomment;
+@synthesize image = _image;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +48,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nommedFood = [[NOMNommedFoodModel alloc] initWith:self.dish];
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    //self.nommedFood = [[NOMNommedFoodModel alloc] initWith:self.dish];
 	self.navigationBar.topItem.title = [self.dish objectForKey:@"name"];
 }
 
 - (void)viewDidUnload
 {
+    self.activityIndicatorView = nil;
     [self setNavigationBar:nil];
     [self setFoodPreview:nil];
+    [self setNommentTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -59,7 +74,7 @@
 - (void)takePhoto {
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        // choose
+        // choose from library or camera
         sourceType = UIImagePickerControllerSourceTypeCamera;
     }
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -75,8 +90,9 @@
     // save locally
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     // UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil); // make async
-    self.foodPreview.image = image; // show preview
-    self.nommedFood.image = image;
+    self.image = image;
+    self.foodPreview.image = self.image; // show preview
+                                    //self.nommedFood.image = image;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -101,16 +117,31 @@
 }
 
 - (IBAction)addedNommentary:(UITextField *)sender {
-    self.nommedFood.nomment = sender.text;
+    [sender resignFirstResponder];
+    self.nomment = sender.text;
 }
 
 - (IBAction)submitToServer:(UIButton *)sender {
-    
-    // check if photo uploaded
-    if (self.nommedFood.nomment == nil) {
-        self.nommedFood.nomment = @"nom nom nom";
+ 
+    [self.activityIndicatorView startAnimating];
+    // check for properties
+    if (!self.nomment) {
+        self.nomment = @"NOM NOM NOM";
+        NSLog(@"%@", self.nomment);
     }
-    NSLog(@"pressed button");
-    [self.nommedFood uploadNomToServer];
+    [NOMNommedFoodModel uploadNomWithImage:self.image comment:self.nomment block:^(NOMNommedFoodModel *food, NSError *error) {
+        [self.activityIndicatorView stopAnimating];
+        
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Upload Failed", nil) message:[error localizedFailureReason] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] show];
+        } else {
+            // show the resulting detail view
+        }
+    }];
+    
+}
+
+- (IBAction)tapBackground:(UIView *)sender {
+    [self.nommentTextField resignFirstResponder];
 }
 @end

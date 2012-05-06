@@ -10,12 +10,13 @@
 
 @interface NOMNommedFoodModel : NSObject
 
-@property (weak, nonatomic) NSString *nomment;
-@property (weak, nonatomic) UIImage *image;
+@property (strong, nonatomic, readonly) NSURL *imageURL;
+@property (strong, nonatomic, readonly) NSURL *thumbnailImageURL;
 
-- (NSString *)getDishTitle;
-- (id) initWith:(NSDictionary *)dish;
-
-- (void)uploadNomToServer; // completion:(void (^)(Photo *photo, NSError *error))block;
+- (id)initWithAttributes:(NSDictionary *)attributes;
++ (void)photosForMenuItem:(NSDictionary *)menuItem block:(void (^)(NSSet *photos, NSError *error))block;
++ (void)uploadNomWithImage:(UIImage *)image 
+                   comment:(NSString *)comment 
+                     block:(void(^)(NOMNommedFoodModel *nommedFood, NSError *error))block;
 
 @end

@@ -24,6 +24,9 @@
 		9342385E154BAFC700D3F008 /* NOMNommedFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342385D154BAFC700D3F008 /* NOMNommedFoodModel.m */; };
 		93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */; };
 		934AD1E8155256C500F86298 /* NOMNomsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AD1E7155256C500F86298 /* NOMNomsAPIClient.m */; };
+		934AD21615565DA500F86298 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 934AD1F715565DA500F86298 /* .gitignore */; };
+		934AD21715565DA500F86298 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 934AD1F815565DA500F86298 /* README.md */; };
+		934AD22115565DA500F86298 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AD20F15565DA500F86298 /* TPKeyboardAvoidingScrollView.m */; };
 		93A7A2C0153E6F04006D63C7 /* NOMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */; };
 		93A7A2C4153E7078006D63C7 /* NOMMenus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2C3153E7078006D63C7 /* NOMMenus.m */; };
 		93C3C1EE153233EF004BEF32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93C3C1ED153233EF004BEF32 /* UIKit.framework */; };
@@ -125,6 +128,10 @@
 		93423868154D118600D3F008 /* NOMAugmentedMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMAugmentedMenuViewController.m; sourceTree = "<group>"; };
 		934AD1E6155256C500F86298 /* NOMNomsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNomsAPIClient.h; sourceTree = "<group>"; };
 		934AD1E7155256C500F86298 /* NOMNomsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNomsAPIClient.m; sourceTree = "<group>"; };
+		934AD1F715565DA500F86298 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		934AD1F815565DA500F86298 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		934AD20E15565DA500F86298 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		934AD20F15565DA500F86298 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		93A7A2BE153E6F04006D63C7 /* NOMMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMMenuViewController.h; sourceTree = "<group>"; };
 		93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMMenuViewController.m; sourceTree = "<group>"; };
 		93A7A2C2153E7078006D63C7 /* NOMMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMMenus.h; sourceTree = "<group>"; };
@@ -208,9 +215,21 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		934AD1F615565DA500F86298 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				934AD1F715565DA500F86298 /* .gitignore */,
+				934AD1F815565DA500F86298 /* README.md */,
+				934AD20E15565DA500F86298 /* TPKeyboardAvoidingScrollView.h */,
+				934AD20F15565DA500F86298 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		93C3C1DE153233EF004BEF32 = {
 			isa = PBXGroup;
 			children = (
+				934AD1F615565DA500F86298 /* TPKeyboardAvoiding */,
 				93423836154B2A8600D3F008 /* AFNetworking */,
 				93C3C1F3153233EF004BEF32 /* Noms */,
 				93C3C1EC153233EF004BEF32 /* Frameworks */,
@@ -414,6 +433,8 @@
 			files = (
 				93C3C1F8153233EF004BEF32 /* InfoPlist.strings in Resources */,
 				93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */,
+				934AD21615565DA500F86298 /* .gitignore in Resources */,
+				934AD21715565DA500F86298 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +467,7 @@
 				93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */,
 				93D861A3154FE84300B64AB6 /* NOMFoodDetailViewController.m in Sources */,
 				934AD1E8155256C500F86298 /* NOMNomsAPIClient.m in Sources */,
+				934AD22115565DA500F86298 /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
