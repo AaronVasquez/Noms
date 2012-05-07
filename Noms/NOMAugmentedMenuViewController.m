@@ -11,17 +11,18 @@
 #import "NOMFoodDetailViewController.h"
 #import "ImageScrollView.h"
 
+#define PADDING  10
 #define kiPhoneWidth 320
+#define kiPhoneHeight 480
 
 @interface NOMAugmentedMenuViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
-@property (weak, nonatomic) UIScrollView *dishPagingScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *dishPagingScrollView;
 @property (weak, nonatomic) UIScrollView *photoPagingScrollView;
 
-// delete this mother fucker later when I get my server working...
-@property (weak, nonatomic) NSArray *testPhotosArray;
+@property (weak, nonatomic) NSMutableArray *testPhotosArray; // delete this mother fucker later
 
--(void)prepareScrollView;
+- (void)configurePage:(ImageScrollView *)page forIndex:(NSUInteger)index;
 
 @end
 
@@ -54,13 +55,29 @@
     }
     
     // init an array of images to test...
-    UIImage *image1 = [UIImage imageNamed:@"in_n_out_burger_cropped.jpg"];
+    UIImage *image1 = [UIImage imageNamed:@"in_n_out_burger_cropped.png"];
     UIImage *image2 = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
     UIImage *image3 = [UIImage imageNamed:@"shake.jpg"];
-    self.testPhotosArray = [NSArray arrayWithObjects:image1, image2, image3, nil];
-    self.photosView.image = [self.testPhotosArray objectAtIndex:2];
+    _testPhotosArray = [NSMutableArray arrayWithObjects:image1, image2, image3, nil];
+//    self.photosView.image = [self.testPhotosArray objectAtIndex:0];
     
-    [self prepareScrollView];
+    // Step 1: make the dish paging scroll view
+    CGRect dishPagingScrollViewFrame = [[UIScreen mainScreen] bounds];
+    dishPagingScrollViewFrame.origin.x -= PADDING;
+    dishPagingScrollViewFrame.size.width += 2*PADDING;
+   
+    self.dishPagingScrollView.frame = dishPagingScrollViewFrame;
+    self.dishPagingScrollView.contentSize = CGSizeMake(dishPagingScrollViewFrame.size.width * [self.testPhotosArray count], dishPagingScrollViewFrame.size.height);
+    self.dishPagingScrollView.delegate = self;
+    self.dishPagingScrollView.maximumZoomScale = 3;
+ 
+    // add pages to scroll view
+    for (int i=0; i<[self.testPhotosArray count]; i++) {
+        ImageScrollView *page = [[ImageScrollView alloc] init];
+        [self configurePage:page forIndex:i];
+        page.clipsToBounds = YES;
+        [self.dishPagingScrollView addSubview:page];
+    }
 }
 
 - (void)viewDidUnload
@@ -68,6 +85,7 @@
     [self setNavigationBar:nil];
     [self setScrollView:nil];
     [self setPhotosView:nil];
+    [self setDishPagingScrollView:nil];
     [super viewDidUnload];
 }
 
@@ -77,11 +95,11 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-
--(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    // index an array of pictures?
-    return self.photosView;
-}
+//
+//-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
+//    // index an array of pictures?
+//    return scrollView;
+//}
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
     // reset counters?
@@ -103,13 +121,41 @@
     destinationViewController.dish = self.dishDisplaying;
 }
 
+#pragma mark  Frame calculations
+
+  
+- (CGRect)frameForPagingScrollView {
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    frame.origin.x -= PADDING;
+    frame.size.width += (2 * PADDING);
+    return frame;
+}
+         
+- (CGRect)frameForPageAtIndex:(NSUInteger)index {
+    CGRect pagingScrollViewFrame = [self frameForPagingScrollView];
+    
+    CGRect pageFrame = pagingScrollViewFrame;
+    pageFrame.size.width -= (2 * PADDING);
+    pageFrame.origin.x = (pagingScrollViewFrame.size.width * index) + PADDING;
+    return pageFrame;
+}
+         
 #pragma mark - my methods
 
-- (void) prepareScrollView {
-    // multiply width by number of pictures
-    self.scrollView.contentSize = CGSizeMake(kiPhoneWidth, 480);
-    self.scrollView.delegate = self;
-    self.scrollView.maximumZoomScale = 1.99;
+- (void)configurePage:(ImageScrollView *)page forIndex:(NSUInteger)index {
+    page.index = index;
+    page.frame = [self frameForPageAtIndex:page.index];
+    
+//   // Use tiled images
+//   [page displayTiledImageNamed:[self imageNameAtIndex:index]
+//                            size:[self imageSizeAtIndex:index]];
+//    
+//   // To use full images instead of tiled images, replace the "displayTiledImageNamed:" call
+//   // above by the following line:
+//   [page displayImage:[self imageAtIndex:index]];
+    
+     [page displayImage:[self.testPhotosArray objectAtIndex:index]];
 }
+
 
 @end

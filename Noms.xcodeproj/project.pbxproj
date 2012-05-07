@@ -51,6 +51,7 @@
 		93D861C61550E3C500B64AB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C51550E3C500B64AB6 /* SystemConfiguration.framework */; };
 		93D861C81550E3D600B64AB6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C71550E3D600B64AB6 /* QuartzCore.framework */; };
 		93D861CA1550E3F600B64AB6 /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C91550E3F600B64AB6 /* libxml2.2.7.3.dylib */; };
+		93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A9220C1557E13D00AB1028 /* ImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -401,6 +402,7 @@
 				93423869154D118600D3F008 /* NOMAugmentedMenuViewController.m in Sources */,
 				93D861A3154FE84300B64AB6 /* NOMFoodDetailViewController.m in Sources */,
 				934AD1E8155256C500F86298 /* NOMNomsAPIClient.m in Sources */,
+				93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */,
 				934AD22115565DA500F86298 /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
