@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NOMAugmentedMenuViewController : UIViewController
+@interface NOMAugmentedMenuViewController : UIViewController <UIScrollViewDelegate>
 
-@property (weak, nonatomic) NSDictionary *dish;
+@property (strong, nonatomic) NSDictionary *menu;
+@property (weak, nonatomic) NSDictionary *dishDisplaying;
+@property (weak, nonatomic) IBOutlet UIImageView *photosView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)dismissView:(id)sender;
 - (IBAction)showDetail:(UIBarButtonItem *)sender;
 

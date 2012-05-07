@@ -111,7 +111,7 @@
         NSDictionary *dish = [self.menu dishAtSection:[self.tableView indexPathForCell:cell].section 
                                                andRow:[self.tableView indexPathForCell:cell].row];
         NOMAugmentedMenuViewController *menuViewController = segue.destinationViewController;
-        menuViewController.dish = dish;
+        menuViewController.dishDisplaying = dish;
     } else if ([segue.identifier isEqualToString:kAddNomSegue]) {
         // pass restaurant
         UIButton *button = (UIButton *)sender;
