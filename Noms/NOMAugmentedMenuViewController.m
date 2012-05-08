@@ -54,6 +54,7 @@
     NOMNommedFoodModel *food1Dish1 = [[NOMNommedFoodModel alloc] init];
     NOMNommedFoodModel *food2Dish1 = [[NOMNommedFoodModel alloc] init];
     NOMNommedFoodModel *food3Dish1 = [[NOMNommedFoodModel alloc] init];
+    NOMNommedFoodModel *food4Dish1 = [[NOMNommedFoodModel alloc] init];
     //    NOMNommedFoodModel *food1Dish2 = [[NOMNommedFoodModel alloc] init];
     //    NOMNommedFoodModel *food2Dish2 = [[NOMNommedFoodModel alloc] init];
     //    NOMNommedFoodModel *food3Dish2 = [[NOMNommedFoodModel alloc] init];
@@ -61,12 +62,14 @@
     food1Dish1.image = [UIImage imageNamed:@"in n out burger.jpg"];
     food2Dish1.image = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
     food3Dish1.image = [UIImage imageNamed:@"shake.jpg"];
+    food4Dish1.image = [UIImage imageNamed:@"lava.jpg"];
     
     food1Dish1.comment = @"This is an In-N-Out double double animal style. It was quite the nom!";
     food2Dish1.comment = @"Animal style fries FTW!";
     food3Dish1.comment = @"Three flavors, one cup!";
+    food4Dish1.comment = @"This was not at In-N-Out?!?!";
     
-    _testNommedArray1 = [NSMutableArray arrayWithObjects:food1Dish1, food2Dish1, food3Dish1, nil];
+    _testNommedArray1 = [NSMutableArray arrayWithObjects:food1Dish1, food2Dish1, food3Dish1, food4Dish1, nil];
 }
 
 - (void)initDishPagingScrollView {

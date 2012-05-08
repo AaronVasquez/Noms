@@ -51,6 +51,8 @@
 		93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402A1558C36D00012D29 /* in n out burger.jpg */; };
 		93E2402D1558E2AA00012D29 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402C1558E2AA00012D29 /* shake.jpg */; };
 		93E240301559144900012D29 /* NOMDishPhotosScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E2402F1559144900012D29 /* NOMDishPhotosScrollView.m */; };
+		93E24032155931A700012D29 /* Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E24031155931A700012D29 /* Icon.jpg */; };
+		93E240341559379800012D29 /* lava.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240331559379800012D29 /* lava.jpg */; };
 		93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A9220C1557E13D00AB1028 /* ImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		93E2402C1558E2AA00012D29 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
 		93E2402E1559144900012D29 /* NOMDishPhotosScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOMDishPhotosScrollView.h; path = ../NOMDishPhotosScrollView.h; sourceTree = "<group>"; };
 		93E2402F1559144900012D29 /* NOMDishPhotosScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOMDishPhotosScrollView.m; path = ../NOMDishPhotosScrollView.m; sourceTree = "<group>"; };
+		93E24031155931A700012D29 /* Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Icon.jpg; sourceTree = "<group>"; };
+		93E240331559379800012D29 /* lava.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lava.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 		934AD22615568BF500F86298 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93E240331559379800012D29 /* lava.jpg */,
 				93E2402C1558E2AA00012D29 /* shake.jpg */,
 				93E2402A1558C36D00012D29 /* in n out burger.jpg */,
 				93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */,
@@ -270,6 +275,7 @@
 		93C3C1F4153233EF004BEF32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93E24031155931A700012D29 /* Icon.jpg */,
 				934AD22F1557992E00F86298 /* icons */,
 				934AD22615568BF500F86298 /* Images */,
 				93C3C1F5153233EF004BEF32 /* Noms-Info.plist */,
@@ -371,6 +377,8 @@
 				93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */,
 				93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */,
 				93E2402D1558E2AA00012D29 /* shake.jpg in Resources */,
+				93E24032155931A700012D29 /* Icon.jpg in Resources */,
+				93E240341559379800012D29 /* lava.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
