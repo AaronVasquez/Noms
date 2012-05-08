@@ -50,6 +50,7 @@
 		93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */; };
 		93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402A1558C36D00012D29 /* in n out burger.jpg */; };
 		93E2402D1558E2AA00012D29 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402C1558E2AA00012D29 /* shake.jpg */; };
+		93E240301559144900012D29 /* NOMDishPhotosScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E2402F1559144900012D29 /* NOMDishPhotosScrollView.m */; };
 		93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A9220C1557E13D00AB1028 /* ImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,8 @@
 		93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Animal_Style_Fries.jpg; sourceTree = "<group>"; };
 		93E2402A1558C36D00012D29 /* in n out burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "in n out burger.jpg"; sourceTree = "<group>"; };
 		93E2402C1558E2AA00012D29 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
+		93E2402E1559144900012D29 /* NOMDishPhotosScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOMDishPhotosScrollView.h; path = ../NOMDishPhotosScrollView.h; sourceTree = "<group>"; };
+		93E2402F1559144900012D29 /* NOMDishPhotosScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOMDishPhotosScrollView.m; path = ../NOMDishPhotosScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 				934AD1E7155256C500F86298 /* NOMNomsAPIClient.m */,
 				93A9220B1557E13D00AB1028 /* ImageScrollView.h */,
 				93A9220C1557E13D00AB1028 /* ImageScrollView.m */,
+				93E2402E1559144900012D29 /* NOMDishPhotosScrollView.h */,
+				93E2402F1559144900012D29 /* NOMDishPhotosScrollView.m */,
 				93C3C1FF153233EF004BEF32 /* MainStoryboard.storyboard */,
 				93C3C1F4153233EF004BEF32 /* Supporting Files */,
 			);
@@ -400,6 +405,7 @@
 				934AD1E8155256C500F86298 /* NOMNomsAPIClient.m in Sources */,
 				93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */,
 				934AD22115565DA500F86298 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				93E240301559144900012D29 /* NOMDishPhotosScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

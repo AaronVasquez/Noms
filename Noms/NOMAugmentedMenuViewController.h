@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageScrollView.h"
 
 @interface NOMAugmentedMenuViewController : UIViewController <UIScrollViewDelegate>
+
+// move to own class
+@property (strong, nonatomic) UIScrollView *dishPagingScrollView;
+@property (strong, nonatomic) NSMutableSet *recycledDishPages;
+@property (strong, nonatomic) NSMutableSet *visibleDishPages;
+- (ImageScrollView *)dequeueRecycledDishPage;
+- (void)tilePages;
 
 @property (strong, nonatomic) NSDictionary *menu;
 @property (weak, nonatomic) NSDictionary *dishDisplaying;

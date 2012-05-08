@@ -58,7 +58,7 @@
         self.showsHorizontalScrollIndicator = NO;
         self.bouncesZoom = YES;
         self.decelerationRate = UIScrollViewDecelerationRateFast;
-        self.delegate = self;        
+        self.delegate = self;
     }
     return self;
 }
@@ -108,6 +108,7 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
+    NSLog(@"Why is this not zooming...");
     return imageView;
 }
 
