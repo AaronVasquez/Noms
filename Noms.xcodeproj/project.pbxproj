@@ -27,10 +27,6 @@
 		934AD21615565DA500F86298 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 934AD1F715565DA500F86298 /* .gitignore */; };
 		934AD21715565DA500F86298 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 934AD1F815565DA500F86298 /* README.md */; };
 		934AD22115565DA500F86298 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AD20F15565DA500F86298 /* TPKeyboardAvoidingScrollView.m */; };
-		934AD22815568C3100F86298 /* in_n_out_burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 934AD22715568C3100F86298 /* in_n_out_burger.jpg */; };
-		934AD22A15568CAA00F86298 /* in_n_out_burger_cropped.png in Resources */ = {isa = PBXBuildFile; fileRef = 934AD22915568CAA00F86298 /* in_n_out_burger_cropped.png */; };
-		934AD22C155797E300F86298 /* Animal_Style_Fries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 934AD22B155797E200F86298 /* Animal_Style_Fries.jpg */; };
-		934AD22E155797EA00F86298 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 934AD22D155797EA00F86298 /* shake.jpg */; };
 		934AD23115579FA000F86298 /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 934AD23015579FA000F86298 /* camera.jpg */; };
 		93A7A2C0153E6F04006D63C7 /* NOMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */; };
 		93A7A2C4153E7078006D63C7 /* NOMMenus.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A7A2C3153E7078006D63C7 /* NOMMenus.m */; };
@@ -92,10 +88,6 @@
 		934AD1F815565DA500F86298 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		934AD20E15565DA500F86298 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		934AD20F15565DA500F86298 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		934AD22715568C3100F86298 /* in_n_out_burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = in_n_out_burger.jpg; sourceTree = "<group>"; };
-		934AD22915568CAA00F86298 /* in_n_out_burger_cropped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = in_n_out_burger_cropped.png; sourceTree = "<group>"; };
-		934AD22B155797E200F86298 /* Animal_Style_Fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Animal_Style_Fries.jpg; sourceTree = "<group>"; };
-		934AD22D155797EA00F86298 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
 		934AD23015579FA000F86298 /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
 		93A7A2BE153E6F04006D63C7 /* NOMMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMMenuViewController.h; sourceTree = "<group>"; };
 		93A7A2BF153E6F04006D63C7 /* NOMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMMenuViewController.m; sourceTree = "<group>"; };
@@ -195,10 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				934AD23015579FA000F86298 /* camera.jpg */,
-				934AD22D155797EA00F86298 /* shake.jpg */,
-				934AD22B155797E200F86298 /* Animal_Style_Fries.jpg */,
-				934AD22915568CAA00F86298 /* in_n_out_burger_cropped.png */,
-				934AD22715568C3100F86298 /* in_n_out_burger.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -365,10 +353,6 @@
 				93C3C201153233EF004BEF32 /* MainStoryboard.storyboard in Resources */,
 				934AD21615565DA500F86298 /* .gitignore in Resources */,
 				934AD21715565DA500F86298 /* README.md in Resources */,
-				934AD22815568C3100F86298 /* in_n_out_burger.jpg in Resources */,
-				934AD22A15568CAA00F86298 /* in_n_out_burger_cropped.png in Resources */,
-				934AD22C155797E300F86298 /* Animal_Style_Fries.jpg in Resources */,
-				934AD22E155797EA00F86298 /* shake.jpg in Resources */,
 				934AD23115579FA000F86298 /* camera.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

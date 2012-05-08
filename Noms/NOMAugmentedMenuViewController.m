@@ -157,5 +157,4 @@
      [page displayImage:[self.testPhotosArray objectAtIndex:index]];
 }
 
-
 @end
