@@ -20,7 +20,14 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *dishPagingScrollView;
 @property (weak, nonatomic) UIScrollView *photoPagingScrollView;
 
-@property (weak, nonatomic) NSMutableArray *testPhotosArray; // delete this mother fucker later
+// delete these mother fuckers later
+//@property (weak, nonatomic) NSMutableArray *testPhotosArray1; 
+//@property (weak, nonatomic) NSMutableArray *testPhotosArray2;
+//@property (weak, nonatomic) NSMutableArray *testCommentsArray1;
+//@property (weak, nonatomic) NSMutableArray *testCommentsArray2;
+@property (weak, nonatomic) NSMutableArray *testNommedArray1;
+@property (weak, nonatomic) NSMutableArray *testNommedArray2;
+
 
 - (void)configurePage:(ImageScrollView *)page forIndex:(NSUInteger)index;
 
@@ -35,7 +42,12 @@
 @synthesize dishPagingScrollView = _dishPagingScrollView; // bottom layer
 @synthesize photoPagingScrollView = _photoPagingScrollView; // middle layer, remove later...needs to be dynamic
 
-@synthesize testPhotosArray = _testPhotosArray;
+//@synthesize testPhotosArray1 = _testPhotosArray1;
+//@synthesize testPhotosArray2 = _testPhotosArray2;
+//@synthesize testCommentsArray1 = _testCommentsArray1;
+//@synthesize testCommentsArray2 = _testCommentsArray2;
+@synthesize testNommedArray1 = _testNommedArray1;
+@synthesize testNommedArray2 = _testNommedArray2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,6 +58,26 @@
     return self;
 }
 
+- (void)initTestData {
+    // init an array of images to test...
+    NOMNommedFoodModel *food1Dish1 = [[NOMNommedFoodModel alloc] init];
+    NOMNommedFoodModel *food2Dish1 = [[NOMNommedFoodModel alloc] init];
+    NOMNommedFoodModel *food3Dish1 = [[NOMNommedFoodModel alloc] init];
+    //    NOMNommedFoodModel *food1Dish2 = [[NOMNommedFoodModel alloc] init];
+    //    NOMNommedFoodModel *food2Dish2 = [[NOMNommedFoodModel alloc] init];
+    //    NOMNommedFoodModel *food3Dish2 = [[NOMNommedFoodModel alloc] init];
+    
+    food1Dish1.image = [UIImage imageNamed:@"in n out burger.jpg"];
+    food2Dish1.image = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
+    food3Dish1.image = [UIImage imageNamed:@"shake.jpg"];
+    
+    food1Dish1.comment = @"This is an In-N-Out double double animal style. It was quite the nom!";
+    food2Dish1.comment = @"Animal style fries FTW!";
+    food3Dish1.comment = @"Three flavors, one cup!";
+    
+    _testNommedArray1 = [NSMutableArray arrayWithObjects:food1Dish1, food2Dish1, food3Dish1, nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,12 +86,7 @@
         self.navigationBar.rightBarButtonItem = nil;
     }
     
-    // init an array of images to test...
-    UIImage *image1 = [UIImage imageNamed:@"in n out burger.jpg"];
-    UIImage *image2 = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
-    UIImage *image3 = [UIImage imageNamed:@"shake.jpg"];
-    _testPhotosArray = [NSMutableArray arrayWithObjects:image1, image2, image3, nil];
-//    self.photosView.image = [self.testPhotosArray objectAtIndex:0];
+    [self initTestData];
     
     // Step 1: make the dish paging scroll view
     CGRect dishPagingScrollViewFrame = [[UIScreen mainScreen] bounds];
@@ -67,12 +94,12 @@
     dishPagingScrollViewFrame.size.width += 2*PADDING;
    
     self.dishPagingScrollView.frame = dishPagingScrollViewFrame;
-    self.dishPagingScrollView.contentSize = CGSizeMake(dishPagingScrollViewFrame.size.width * [self.testPhotosArray count], dishPagingScrollViewFrame.size.height);
+    self.dishPagingScrollView.contentSize = CGSizeMake(dishPagingScrollViewFrame.size.width * [self.testNommedArray1 count], dishPagingScrollViewFrame.size.height);
     self.dishPagingScrollView.delegate = self;
     self.dishPagingScrollView.maximumZoomScale = 3;
  
     // add pages to scroll view
-    for (int i=0; i<[self.testPhotosArray count]; i++) {
+    for (int i=0; i<[self.testNommedArray1 count]; i++) {
         ImageScrollView *page = [[ImageScrollView alloc] init];
         [self configurePage:page forIndex:i];
         page.clipsToBounds = YES;
@@ -153,8 +180,8 @@
 //   // To use full images instead of tiled images, replace the "displayTiledImageNamed:" call
 //   // above by the following line:
 //   [page displayImage:[self imageAtIndex:index]];
-    
-     [page displayImage:[self.testPhotosArray objectAtIndex:index]];
+    NOMNommedFoodModel *nommedFood = [self.testNommedArray1 objectAtIndex:index];
+    [page displayImage:nommedFood.image];
 }
 
 @end

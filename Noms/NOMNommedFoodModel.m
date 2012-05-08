@@ -12,12 +12,16 @@
 @interface NOMNommedFoodModel()
 @property (strong, nonatomic, readwrite) NSString *imageURLString;
 @property (strong, nonatomic, readwrite) NSString *thumbnailImageURLString;
+
 @end
 
 @implementation NOMNommedFoodModel
 @synthesize imageURLString = _imageURLString;
 @synthesize thumbnailImageURLString = _thumbnailImageURLString;
 @dynamic imageURL;
+
+@synthesize image = _image;
+@synthesize comment = _comment;
 
 static CGFloat const kPhotoJPEGQuality = 0.6;
 
