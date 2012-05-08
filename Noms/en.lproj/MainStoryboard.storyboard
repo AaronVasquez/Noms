@@ -301,7 +301,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="scaleAspectFit" image="camera.jpg" id="Dm0-Mv-TWb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="camera.jpg" id="Dm0-Mv-TWb">
                                         <rect key="frame" x="20" y="65" width="280" height="247"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -365,7 +365,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="0.96712477189781032" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.99893567839999997" blue="0.93373918300000003" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <action selector="tapBackground:" destination="Blu-Jn-aVE" eventType="touchDown" id="Pzc-dN-z8Z"/>
                         </connections>
@@ -383,60 +383,6 @@
     <resources>
         <image name="camera.jpg" width="300" height="300"/>
     </resources>
-    <classes>
-        <class className="CLLocationManager" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
-        </class>
-        <class className="NOMAddNomViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMAddNomViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="action" name="addedNommentary:" candidateClass="UITextField"/>
-                <relationship kind="action" name="dismissView:"/>
-                <relationship kind="action" name="submitToServer:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tapBackground:" candidateClass="UIView"/>
-                <relationship kind="outlet" name="foodPreview" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="nommentTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NOMAugmentedMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMAugmentedMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissView:"/>
-                <relationship kind="action" name="showDetail:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dishPagingScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="photosView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="NOMFindRestaurantsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMFindRestaurantsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="findRestaurants"/>
-                <relationship kind="outlet" name="locationManager" candidateClass="CLLocationManager"/>
-            </relationships>
-        </class>
-        <class className="NOMFoodDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMFoodDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dissmissView:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="foodDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="foodPrices" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="foodTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NOMMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMMenuViewController.h"/>
-        </class>
-        <class className="NOMRestaurantsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NOMRestaurantsViewController.h"/>
-        </class>
-        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

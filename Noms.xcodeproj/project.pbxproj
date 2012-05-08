@@ -50,6 +50,7 @@
 		93E240251558BF8300012D29 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240241558BF8300012D29 /* shake.jpg */; };
 		93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */; };
 		93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402A1558C36D00012D29 /* in n out burger.jpg */; };
+		93E2402D1558E2AA00012D29 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402C1558E2AA00012D29 /* shake.jpg */; };
 		93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A9220C1557E13D00AB1028 /* ImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		93E240241558BF8300012D29 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
 		93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Animal_Style_Fries.jpg; sourceTree = "<group>"; };
 		93E2402A1558C36D00012D29 /* in n out burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "in n out burger.jpg"; sourceTree = "<group>"; };
+		93E2402C1558E2AA00012D29 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		934AD22615568BF500F86298 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93E2402C1558E2AA00012D29 /* shake.jpg */,
 				93E2402A1558C36D00012D29 /* in n out burger.jpg */,
 				93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */,
 				93E240241558BF8300012D29 /* shake.jpg */,
@@ -366,6 +369,7 @@
 				93E240251558BF8300012D29 /* shake.jpg in Resources */,
 				93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */,
 				93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */,
+				93E2402D1558E2AA00012D29 /* shake.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
