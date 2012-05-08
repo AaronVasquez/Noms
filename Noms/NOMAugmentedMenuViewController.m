@@ -62,7 +62,7 @@
     food1Dish1.image = [UIImage imageNamed:@"in n out burger.jpg"];
     food2Dish1.image = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
     food3Dish1.image = [UIImage imageNamed:@"shake.jpg"];
-    food4Dish1.image = [UIImage imageNamed:@"lava.jpg"];
+    food4Dish1.image = [UIImage imageNamed:@"lava.png"];
     
     food1Dish1.comment = @"This is an In-N-Out double double animal style. It was quite the nom!";
     food2Dish1.comment = @"Animal style fries FTW!";
