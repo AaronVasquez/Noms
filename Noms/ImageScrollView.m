@@ -106,9 +106,7 @@
 #pragma mark -
 #pragma mark UIScrollView delegate methods
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    NSLog(@"Why is this not zooming...");
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return imageView;
 }
 
