@@ -33,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", self.dish);
     self.foodTitle.text = [self.dish objectForKey:@"name"];
     self.foodDescription.text = [self.dish objectForKey:@"description"];
     self.foodPrices.text = [self displayPrices];

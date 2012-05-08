@@ -47,10 +47,9 @@
 		93D861C61550E3C500B64AB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C51550E3C500B64AB6 /* SystemConfiguration.framework */; };
 		93D861C81550E3D600B64AB6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C71550E3D600B64AB6 /* QuartzCore.framework */; };
 		93D861CA1550E3F600B64AB6 /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D861C91550E3F600B64AB6 /* libxml2.2.7.3.dylib */; };
-		93E240231558BF7700012D29 /* in_n_out_burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240221558BF7700012D29 /* in_n_out_burger.jpg */; };
 		93E240251558BF8300012D29 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240241558BF8300012D29 /* shake.jpg */; };
 		93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */; };
-		93E240291558C1A500012D29 /* in_n_out_burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E240281558C1A500012D29 /* in_n_out_burger.jpg */; };
+		93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E2402A1558C36D00012D29 /* in n out burger.jpg */; };
 		93E7B77C1557FCE80015CA53 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A9220C1557E13D00AB1028 /* ImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -123,10 +122,9 @@
 		93D861C51550E3C500B64AB6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		93D861C71550E3D600B64AB6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93D861C91550E3F600B64AB6 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
-		93E240221558BF7700012D29 /* in_n_out_burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = in_n_out_burger.jpg; sourceTree = "<group>"; };
 		93E240241558BF8300012D29 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
 		93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Animal_Style_Fries.jpg; sourceTree = "<group>"; };
-		93E240281558C1A500012D29 /* in_n_out_burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = in_n_out_burger.jpg; sourceTree = "<group>"; };
+		93E2402A1558C36D00012D29 /* in n out burger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "in n out burger.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,10 +192,9 @@
 		934AD22615568BF500F86298 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				93E240281558C1A500012D29 /* in_n_out_burger.jpg */,
+				93E2402A1558C36D00012D29 /* in n out burger.jpg */,
 				93E240261558BF8900012D29 /* Animal_Style_Fries.jpg */,
 				93E240241558BF8300012D29 /* shake.jpg */,
-				93E240221558BF7700012D29 /* in_n_out_burger.jpg */,
 				934AD23015579FA000F86298 /* camera.jpg */,
 			);
 			name = Images;
@@ -366,10 +363,9 @@
 				934AD21615565DA500F86298 /* .gitignore in Resources */,
 				934AD21715565DA500F86298 /* README.md in Resources */,
 				934AD23115579FA000F86298 /* camera.jpg in Resources */,
-				93E240231558BF7700012D29 /* in_n_out_burger.jpg in Resources */,
 				93E240251558BF8300012D29 /* shake.jpg in Resources */,
 				93E240271558BF8900012D29 /* Animal_Style_Fries.jpg in Resources */,
-				93E240291558C1A500012D29 /* in_n_out_burger.jpg in Resources */,
+				93E2402B1558C36D00012D29 /* in n out burger.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

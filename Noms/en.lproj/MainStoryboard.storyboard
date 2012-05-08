@@ -167,6 +167,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.87931729137791026" blue="0.76600840588665908" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="a7W-Ns-ff5" kind="modal" identifier="augmented menu" modalTransitionStyle="flipHorizontal" id="FFZ-Ew-PJP"/>
                                 </connections>
@@ -217,7 +218,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -276,7 +277,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.99893567841347275" blue="0.93373918301312164" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="foodDescription" destination="lO1-zk-K8i" id="sF5-PE-yY2"/>
@@ -300,7 +301,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Dm0-Mv-TWb">
+                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="scaleAspectFit" image="camera.jpg" id="Dm0-Mv-TWb">
                                         <rect key="frame" x="20" y="65" width="280" height="247"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -347,6 +348,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.87931729140000003" blue="0.76600840589999997" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" id="ejf-0e-Bpx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -378,6 +380,9 @@
             <point key="canvasLocation" x="445" y="-817"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.jpg" width="300" height="300"/>
+    </resources>
     <classes>
         <class className="CLLocationManager" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CLLocationManager.h"/>
