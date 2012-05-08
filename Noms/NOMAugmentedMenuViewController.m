@@ -55,7 +55,7 @@
     }
     
     // init an array of images to test...
-    UIImage *image1 = [UIImage imageNamed:@"in_n_out_burger_cropped.png"];
+    UIImage *image1 = [UIImage imageNamed:@"in_n_out_burger.png"];
     UIImage *image2 = [UIImage imageNamed:@"Animal_Style_Fries.jpg"];
     UIImage *image3 = [UIImage imageNamed:@"shake.jpg"];
     _testPhotosArray = [NSMutableArray arrayWithObjects:image1, image2, image3, nil];
