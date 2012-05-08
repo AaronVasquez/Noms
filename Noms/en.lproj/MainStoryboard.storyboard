@@ -225,6 +225,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="commentView" destination="JSm-Rb-B6z" id="YMr-QB-IyY"/>
                         <outlet property="dishPagingScrollView" destination="8pb-p7-HeR" id="BhP-0U-TFg"/>
                         <outlet property="navigationBar" destination="hZW-Bx-hSQ" id="stg-cw-Ty1"/>
                         <segue destination="k6y-88-vo7" kind="modal" identifier="food detail" modalTransitionStyle="partialCurl" id="oM1-AM-ZJg"/>

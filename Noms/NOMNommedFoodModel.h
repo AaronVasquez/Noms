@@ -15,7 +15,7 @@
 
 // temporary testing ivar...remove later
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic)NSString *comment;
+@property (strong, nonatomic) NSString *comment;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 + (void)photosForMenuItem:(NSDictionary *)menuItem block:(void (^)(NSSet *photos, NSError *error))block;

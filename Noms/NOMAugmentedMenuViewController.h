@@ -12,8 +12,7 @@
 
 @property (strong, nonatomic) NSDictionary *menu;
 @property (weak, nonatomic) NSDictionary *dishDisplaying;
-@property (weak, nonatomic) IBOutlet UIImageView *photosView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *commentView;
 - (IBAction)dismissView:(id)sender;
 - (IBAction)showDetail:(UIBarButtonItem *)sender;
 

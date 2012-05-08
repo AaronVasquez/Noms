@@ -21,12 +21,8 @@
 @property (weak, nonatomic) UIScrollView *photoPagingScrollView;
 
 // delete these mother fuckers later
-//@property (weak, nonatomic) NSMutableArray *testPhotosArray1; 
-//@property (weak, nonatomic) NSMutableArray *testPhotosArray2;
-//@property (weak, nonatomic) NSMutableArray *testCommentsArray1;
-//@property (weak, nonatomic) NSMutableArray *testCommentsArray2;
-@property (weak, nonatomic) NSMutableArray *testNommedArray1;
-@property (weak, nonatomic) NSMutableArray *testNommedArray2;
+@property (strong, nonatomic) NSMutableArray *testNommedArray1;
+@property (strong, nonatomic) NSMutableArray *testNommedArray2;
 
 
 - (void)configurePage:(ImageScrollView *)page forIndex:(NSUInteger)index;
@@ -37,15 +33,10 @@
 @synthesize  menu = _menu;
 @synthesize navigationBar = _navigationBar;
 @synthesize dishDisplaying = _dishDisplaying;
-@synthesize photosView = _photosView;
-@synthesize scrollView = _scrollView;
+@synthesize commentView = _commentView;
 @synthesize dishPagingScrollView = _dishPagingScrollView; // bottom layer
 @synthesize photoPagingScrollView = _photoPagingScrollView; // middle layer, remove later...needs to be dynamic
 
-//@synthesize testPhotosArray1 = _testPhotosArray1;
-//@synthesize testPhotosArray2 = _testPhotosArray2;
-//@synthesize testCommentsArray1 = _testCommentsArray1;
-//@synthesize testCommentsArray2 = _testCommentsArray2;
 @synthesize testNommedArray1 = _testNommedArray1;
 @synthesize testNommedArray2 = _testNommedArray2;
 
@@ -105,14 +96,19 @@
         page.clipsToBounds = YES;
         [self.dishPagingScrollView addSubview:page];
     }
+    
+    // set up first nommed food
+    NOMNommedFoodModel *firstNom = [self.testNommedArray1 objectAtIndex:0];
+    self.commentView.text = firstNom.comment;
 }
 
 - (void)viewDidUnload
 {
+    self.testNommedArray1 = nil;
+    self.testNommedArray2 = nil;
     [self setNavigationBar:nil];
-    [self setScrollView:nil];
-    [self setPhotosView:nil];
     [self setDishPagingScrollView:nil];
+    [self setCommentView:nil];
     [super viewDidUnload];
 }
 
@@ -122,11 +118,19 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-//
-//-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
-//    // index an array of pictures?
-//    return scrollView;
-//}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    static NSInteger previousPage = 0;
+    CGFloat pageWidth = scrollView.frame.size.width;
+    float fractionalPage = scrollView.contentOffset.x / pageWidth;
+    NSInteger page = lround(fractionalPage);
+    if (previousPage != page) {
+        //set the comment to the appropriate one
+        NOMNommedFoodModel *nommedFood = [self.testNommedArray1 objectAtIndex:page];
+        self.commentView.text = nommedFood.comment;
+        previousPage = page;
+    }
+}
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
     // reset counters?
